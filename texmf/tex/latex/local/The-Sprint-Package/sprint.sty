@@ -1,0 +1,369 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{sprint}[2014/08/21 The fastest compiling way]
+
+\RequirePackage{enumitem}
+\RequirePackage[many]{tcolorbox}
+\RequirePackage{bookmark}
+\tcbuselibrary{theorems}
+\tcbuselibrary{skins}
+\usetikzlibrary{calc}
+\RequirePackage{import}
+\RequirePackage{hyperref}
+\hypersetup{
+colorlinks=true,
+urlcolor=RubineRed,
+linkcolor=RoyalBlue,
+citecolor=ForestGreen,
+linktoc=all
+}
+\RequirePackage{xcolor} 
+\RequirePackage{setspace}
+\RequirePackage{textcomp}
+\RequirePackage{upgreek} %For loading some symobls which I might use CS someday
+\RequirePackage{gensymb}
+\RequirePackage{etoolbox}
+\RequirePackage{calc}
+\RequirePackage{lipsum}
+\RequirePackage[framemethod=TikZ]{mdframed}
+\RequirePackage{arcs}
+\RequirePackage{soul}
+\RequirePackage{graphicx}
+\RequirePackage{tkz-euclide}
+\RequirePackage{cancel}
+\RequirePackage{fontawesome}
+\RequirePackage{mathtools}
+\RequirePackage{bm}
+\RequirePackage{braket}
+\RequirePackage{amsmath,amsfonts,amsthm,amssymb}
+\RequirePackage{cleveref}
+\RequirePackage{listings}
+\RequirePackage{wrapfig}
+\RequirePackage{float}
+\RequirePackage{bbding} %Loads a lot nice symbols
+\RequirePackage{lmodern}
+%\RequirePackage{libertinus}
+
+%If conditions(hopefully)
+\newif\ifdeep\deepfalse
+\newif\ifsimpsec\simpsectrue
+\newif\ifnoheader\noheaderfalse
+\newif\ifasy\asytrue
+
+%Options(hopefully)
+\DeclareOption{deep}{\deeptrue} %If you don't want theorem  numbering to down to subsubsections
+\DeclareOption{simpsec}{\simpsecfalse} %If you don't want fancy section labellings
+\DeclareOption{noheader}{\noheadertrue} %Pass this option to remove headers
+\ProcessOptions\relax
+
+%Headers and Footers
+\ifnoheader
+
+\else
+%Just add geometry package before this scrlayer-scrpage package if you are using it.
+\RequirePackage[headsepline=:\the\textwidth,clines]{scrlayer-scrpage} %Header and footers
+\newcommand{\lhead}[1]{\ihead{\normalfont{#1}}} 
+\newcommand{\rhead}[1]{\ohead{\normalfont{\textsf{#1}}}}
+\lhead{{\textbf{Pragyan Pranay} (Last edit on \today)}}
+\fi
+
+\ifsimpsec
+%Section(s) Style
+\addtokomafont{section}{\LARGE}
+\addtokomafont{subsection}{\Large}
+\addtokomafont{subsubsection}{\large}
+
+\renewcommand{\partformat}{\partname~\thepart. \autodot}
+\renewcommand*{\sectionformat}{\textcolor{pro}{\S\thesection}\autodot\enskip}
+\renewcommand*{\subsectionformat}{\textcolor{pro}{\S\thesubsection}\autodot\enskip}
+\renewcommand*{\subsubsectionformat}{\textcolor{pro}{\S\thesubsubsection}\autodot\enskip}
+\KOMAoptions{numbers=noenddot} %Removes dots after section numbers
+
+\else
+
+\fi
+
+%Table of Contents
+\addtokomafont{partentry}{\LARGE\color{violet}}
+%Rest I can change colors using hyperref package(kinda hack, but works nicely). Here I redefined \tableofcontents for that.
+\NewCommandCopy{\toc}{\tableofcontents}
+\renewcommand{\tableofcontents}{{
+\hypersetup{linkcolor=violet}
+\toc
+}}
+
+%ToC Contents font
+%\renewcommand{\contentsname}{\bfseries \sffamily Contents}%(Won't be required with Koma-Script)
+
+%Section Counter after every part
+\makeatletter
+\@addtoreset{section}{part}
+\makeatother
+
+%Theorem Environments
+\newtheoremstyle{prob}{}{}{\normalfont}{}{\bfseries}{\textbf{.}}{.5em}{}
+\theoremstyle{prob}
+\newtheorem{problem}{Problem}
+\newtheorem{question}{Question}
+
+%Case Environment
+\newtheoremstyle{case}{}{}{}{}{\bfseries \sffamily \color{red}}{\textbf{.}}{.5em}{}
+\theoremstyle{case}
+\newtheorem{case}{\HandPencilLeft \, Case}
+
+%Claim
+\newtheoremstyle{claim}{}{}{}{}{\bfseries \sffamily \color{dgreen}}{\,---}{.5em}{}
+
+\ifdeep
+\theoremstyle{claim}
+\newtheorem{claim}{Claim}[subsubsection]
+\newtheorem*{claim*}{Claim}
+\else
+\theoremstyle{claim}
+\newtheorem{claim}{Claim}[section]
+\newtheorem*{claim*}{Claim}
+\fi
+
+%Remark
+\newtheoremstyle{rem}{}{}{\normalfont}{}{\bfseries \sffamily}{\textbf{.}}{.5em}{}
+
+\ifdeep
+\theoremstyle{rem}
+\newtheorem*{rem*}{Remark}
+\newtheorem{rem}{Remark}[subsubsection]
+\else
+\theoremstyle{rem}
+\newtheorem*{rem*}{Remark}
+\newtheorem{rem}{Remark}[section]
+\fi
+
+%Comment
+\newtheoremstyle{comment}{}{}{\normalfont}{}{\bfseries \sffamily}{\textbf{.}}{.5em}{}
+
+\ifdeep
+\theoremstyle{comment}
+\newtheorem*{com*}{Comment}
+\newtheorem{com}{Comment}[subsubsection]
+\else
+\theoremstyle{comment}
+\newtheorem*{com*}{Comment}
+\newtheorem{com}{Comment}[section]
+\fi
+
+%Lemma
+\newtheoremstyle{lemma}{}{}{}{}{\bfseries \sffamily \color{RebeccaPurple}}{\,---}{.5em}{}
+
+\ifdeep
+\theoremstyle{lemma}
+\newtheorem{lemma}{Lemma}[subsubsection]
+\newtheorem*{lemma*}{Lemma}
+\else
+\theoremstyle{lemma}
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem*{lemma*}{Lemma}
+\fi
+
+
+%Exercise
+\newtheoremstyle{exercise}{}{}{\normalfont}{}{\bfseries}{.}{.5em}{}
+
+\ifdeep
+\theoremstyle{exercise}
+\newtheorem{exercise}{Exercise}[subsubsection]
+\newtheorem*{exercise*}{Exercise}
+\else
+\theoremstyle{exercise}
+\newtheorem{exercise}{Exercise}[section]
+\newtheorem*{exercise*}{Exercise}
+\fi
+
+
+%Stylizing the boxes
+\tcolorboxenvironment{claim}{enhanced,left=5mm, colback=dgreen!10, boxrule=0pt, frame hidden, borderline west={0.9mm}{0pt}{dgreen}, before skip=12pt, after skip=10pt}
+\tcolorboxenvironment{claim*}{enhanced,left=5mm, colback=dgreen!10, boxrule=0pt, frame hidden, borderline west={0.9mm}{0pt}{dgreen}, before skip=12pt, after skip=10pt}
+
+\tcolorboxenvironment{rem}{enhanced,left=5mm, breakable, colback=black!10, boxrule=0pt, frame hidden, borderline west={0.9mm}{0pt}{black}, before skip=12pt, after skip=10pt}
+\tcolorboxenvironment{rem*}{enhanced,left=5mm, colback=black!10, boxrule=0pt, frame hidden, borderline west={0.9mm}{0pt}{black}, before skip=12pt, after skip=10pt}
+
+\tcolorboxenvironment{com}{enhanced,left=5mm, breakable, colback=black!10, boxrule=0pt, frame hidden, borderline west={0.9mm}{0pt}{black}, before skip=12pt, after skip=10pt}
+\tcolorboxenvironment{com*}{enhanced,left=5mm, colback=black!10, boxrule=0pt, frame hidden, borderline west={0.9mm}{0pt}{black}, before skip=12pt, after skip=10pt}
+
+\tcolorboxenvironment{lemma}{enhanced,left=5mm, colback=RebeccaPurple!10, boxrule=0pt, frame hidden, borderline west={0.9mm}{0pt}{RebeccaPurple}, before skip=12pt, after skip=10pt}
+\tcolorboxenvironment{lemma*}{enhanced,left=5mm, colback=RebeccaPurple!10, boxrule=0pt, frame hidden, borderline west={0.9mm}{0pt}{RebeccaPurple}, before skip=12pt, after skip=10pt}
+
+\tcolorboxenvironment{case}{enhanced,left=5mm, colback=orange!10, boxrule=0pt, frame hidden, borderline west={0.9mm}{0pt}{red}, before skip=12pt, after skip=10pt}
+
+%Setting up Theorem Environment
+\tcbset{thmbox/.style= {enhanced,frame empty,interior empty,colframe=white, top=2.5mm,
+    coltitle=white,fonttitle=\bfseries \sffamily,colbacktitle=violet!100!white,
+    borderline={0.5mm}{0mm}{violet!15!},
+    borderline={0.5mm}{0mm}{violet!50!white},
+    attach boxed title to top left={yshift=-1.5mm},
+    boxed title style={boxrule=1pt}}}
+
+\ifdeep
+\newtcbtheorem[auto counter, number within=subsubsection]{thm}{Theorem}{thmbox}{thm}
+\else
+\newtcbtheorem[auto counter, number within=section]{thm}{Theorem}{thmbox}{thm}
+\fi
+
+
+\ifdeep
+\newtcbtheorem[auto counter,number within=subsubsection]{defi}{Definition}%
+{enhanced,frame empty,interior empty,colframe=white, top=2.5mm,
+    coltitle=white,fonttitle=\bfseries \sffamily,colbacktitle=orange!100!white,
+    borderline={0.5mm}{0mm}{orange!15!},
+    borderline={0.5mm}{0mm}{orange!50!white},
+    attach boxed title to top left={yshift=-1.8mm},
+    boxed title style={boxrule=1pt}}{thm}
+\else
+\newtcbtheorem[auto counter,number within=section]{defi}{Definition}%
+{enhanced,frame empty,interior empty,colframe=white, top=2.5mm,
+    coltitle=white,fonttitle=\bfseries \sffamily,colbacktitle=orange!100!white,
+    borderline={0.5mm}{0mm}{orange!15!},
+    borderline={0.5mm}{0mm}{orange!50!white},
+    attach boxed title to top left={yshift=-1.8mm},
+    boxed title style={boxrule=1pt}}{thm}
+\fi
+
+\newtcbtheorem[auto counter,number within=section]{prob}{\textbf{Problem}}%
+    {enhanced,frame empty,interior empty, sharp corners, colframe=magenta, top=1.5mm,separator sign none, coltitle=white,fonttitle=
+    \sffamily \bfseries, description font=\mdseries\sffamily, colbacktitle=magenta!100!white,
+        borderline={0.5mm}{0mm}{magenta!15!},
+        borderline={0.5mm}{0mm}{magenta!100!white},
+        attach boxed title to top left={yshift=0mm},
+        boxed title style=sharp corners,
+    }{thm} %(description font helps in resolving issues with theorem name and custom theorem name as fonttitle gives same font family to both Theorem name and Number)
+
+
+%Colors
+\definecolor{pro}{HTML}{DE3163}
+\definecolor{dgreen}{HTML}{228B22}
+\definecolor{ForestGreen}{HTML}{002366}
+\definecolor{RubineRed}{HTML}{D10056}
+\definecolor{RoyalBlue}{HTML}{4169E1}
+\definecolor{DeepSkyBlue}{HTML}{1E90FF}
+\definecolor{Teal}{HTML}{008080}
+\definecolor{RebeccaPurple}{HTML}{663399}
+\definecolor{myblue}{RGB}{0,163,243}
+\definecolor{MidnightBlue}{HTML}{191970}
+\definecolor{nice}{HTML}{ff5b93}
+\definecolor{nice2}{HTML}{923fb5}
+\definecolor{nice3}{HTML}{c6c900}
+\definecolor{nice4}{HTML}{0ecfa8}
+\definecolor{maroon}{HTML}{800000}
+%\definecolor{}{}{}
+%\definecolor{}{}{}
+
+
+%Useful Commands
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+
+\newcommand{\tdg}{\textcolor{dgreen}}
+\newcommand{\floor}[1]{\left\lfloor {#1} \right\rfloor}
+\newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}
+\newcommand{\ray}[1]{\overrightarrow{#1}}
+\newcommand{\ol}[1]{\overline{#1}}
+\newcommand{\abs}[1]{\left\lvert #1 \right\rvert}
+\newcommand{\seg}[1]{\overline{#1}}
+\newcommand{\arc}[1]{\wideparen{#1}}
+\newcommand{\ts}{\textsuperscript}
+\newcommand{\tsub}{\textsubsscript}
+\newcommand{\ii}{\item}
+\newcommand{\tbsf}[1]{\textbf{\textsf{#1}}}
+\newcommand{\dangle}{\measuredangle}
+\newcommand{\ntsf}[1]{\normalfont{\textsf{\textcolor{dgreen}{#1}}}}
+\newcommand*{\leaf}{\ensuremath{\text{\faLeaf}}}
+\newcommand{\dg}{^\circ}
+\newcommand{\bsquare}{\hfill$\blacksquare$\par\medskip}
+
+\DeclareMathOperator*{\lcm}{lcm}
+\DeclareMathOperator*{\argmin}{arg min}
+\DeclareMathOperator*{\argmax}{arg max}
+\DeclareMathOperator{\img}{im}
+\DeclareMathOperator{\Img}{Im}
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Pow}{Pow}
+\DeclareMathOperator{\ord}{ord}
+
+%Important Environments
+\newenvironment{sol}{%
+     \par\medskip\noindent\textit{Solution.}}{%
+     \hfill$\blacksquare$\par\medskip}
+
+\newenvironment{ans}{%
+     \vspace{-2mm}
+     \setlength\parindent{-2pt}\par\medskip\textit{Answer.}}{%
+     \hfill\par\medskip}
+
+\newenvironment{otisprob}{%
+	\color{maroon}}{%
+	\color{black}\par\noindent\rule{\textwidth}{0.4pt}\vspace{-4mm}
+	}
+
+%Removing hyperref warning when going math mode in \section stuff
+\makeatletter
+\pdfstringdefDisableCommands{\let\HyPsd@CatcodeWarning\@gobble}
+\makeatother
+
+%Making the paranthesis blue while using eqref
+\makeatletter
+\renewcommand*{\eqref}[1]{%
+  \hyperref[{#1}]{\textup{\tagform@{\ref*{#1}}}}%
+}
+\makeatother
+
+%Asymptote (Completely copied from evan.sty for olympiad based diagrams)
+
+\RequirePackage{asymptote}
+\begin{asydef}
+    defaultpen(fontsize(10pt));
+    size(8cm); // set a reasonable default
+    usepackage("amsmath");
+    usepackage("amssymb");
+    settings.tex="pdflatex";
+    settings.outformat="pdf";
+    // Replacement for olympiad+cse5 which is not standard
+    import geometry;
+    // recalibrate fill and filldraw for conics
+    void filldraw(picture pic = currentpicture, conic g, pen fillpen=defaultpen, pen drawpen=defaultpen)
+        { filldraw(pic, (path) g, fillpen, drawpen); }
+    void fill(picture pic = currentpicture, conic g, pen p=defaultpen)
+        { filldraw(pic, (path) g, p); }
+    // some geometry
+    pair foot(pair P, pair A, pair B) { return foot(triangle(A,B,P).VC); }
+    pair orthocenter(pair A, pair B, pair C) { return orthocentercenter(A,B,C); }
+    pair centroid(pair A, pair B, pair C) { return (A+B+C)/3; }
+    // cse5 abbrevations
+    path CP(pair P, pair A) { return circle(P, abs(A-P)); }
+    path CR(pair P, real r) { return circle(P, r); }
+    pair IP(path p, path q) { return intersectionpoints(p,q)[0]; }
+    pair OP(path p, path q) { return intersectionpoints(p,q)[1]; }
+    path Line(pair A, pair B, real a=0.6, real b=a) { return (a*(A-B)+A)--(b*(B-A)+B); }
+    // cse5 more useful functions
+    picture CC() {
+        picture p=rotate(0)*currentpicture;
+        currentpicture.erase();
+        return p;
+    }
+    pair MP(Label s, pair A, pair B = plain.S, pen p = defaultpen) {
+        Label L = s;
+        L.s = "$"+s.s+"$";
+        label(L, A, B, p);
+        return A;
+    }
+    pair Drawing(Label s = "", pair A, pair B = plain.S, pen p = defaultpen) {
+        dot(MP(s, A, B, p), p);
+        return A;
+    }
+    path Drawing(path g, pen p = defaultpen, arrowbar ar = None) {
+        draw(g, p, ar);
+        return g;
+    }
+\end{asydef}
+
+\endinput
