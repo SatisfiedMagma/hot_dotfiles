@@ -113,12 +113,13 @@ alias zshconfig="vim ~/.zshrc"
 alias matholy="cd ~/Documents/Maths-Olympiads/"
 alias olycode="code ~/Documents/Maths-Olympiads/"
 alias mkprob="~/Documents/Maths-Olympiads/Useful_Scripts/prob.sh"
-
+alias python="python3"
+alias cscode="code ~/Desktop/Computer_Science"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 #Starship configuration?
 eval "$(starship init zsh)"
 
-#ScreenFetch
-neofetch
+#fm6000 setup (https://github.com/anhsirk0/fetch-master-6000)
+fm6000 -c random -random
