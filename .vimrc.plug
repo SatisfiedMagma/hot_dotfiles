@@ -7,5 +7,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-python/python-syntax',     { 'for' : 'python' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-airline/vim-airline-themes'
+Plug 'ap/vim-css-color'
 
 call plug#end()

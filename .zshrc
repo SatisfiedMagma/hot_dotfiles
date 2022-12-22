@@ -115,6 +115,7 @@ alias olycode="code ~/Documents/Maths-Olympiads/"
 alias mkprob="~/Documents/Maths-Olympiads/Useful_Scripts/prob.sh"
 alias python="python3"
 alias cscode="code ~/Desktop/Computer_Science"
+alias getsol="python /home/pragyan/Documents/Maths-Olympiads/Useful_Scripts/sol.py"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
