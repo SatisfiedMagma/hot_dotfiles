@@ -116,6 +116,9 @@ alias mkprob="~/Documents/Maths-Olympiads/Useful_Scripts/prob.sh"
 alias python="python3"
 alias cscode="code ~/Desktop/Computer_Science"
 alias getsol="python /home/pragyan/Documents/Maths-Olympiads/Useful_Scripts/sol.py"
+alias egmo="open /home/pragyan/Documents/Maths-Olympiads/Handouts_Books/EGMO_Geo.pdf"
+alias mont="open /home/pragyan/Documents/Maths-Olympiads/Handouts_Books/MONT.pdf"
+alias combo="open /home/pragyan/Documents/Maths-Olympiads/Handouts_Books/Pablo_Combo.pdf"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
