@@ -221,10 +221,10 @@ for_window [class="Code"] move to workspace $ws4
 for_window [class="Spotify"] move to workspace $ws5
 
 #i3 gaps (Squeezed the life out of me to install it, but I did it!) Ubuntu is just bad, arch I will come one day.
-gaps inner 10
+gaps inner 8
 
-default_border pixel 3
-default_floating_border pixel 4
+default_border pixel 2
+default_floating_border pixel 2
 
 # class                 border  backgr. text    indicator child_border
 client.focused          #8E3596 #8E3596 #ffffff #2e9ef4   #8E3596

@@ -83,7 +83,16 @@ linktoc=all
 \fi
 
 %Table of Contents
-\addtokomafont{partentry}{\LARGE\color{violet}}
+%\addtokomafont{partentry}{\LARGE\color{violet}} %NO use ig
+\DeclareTOCStyleEntry[%
+        indent=0em,%
+        numwidth=3.5em,%
+        pagenumberwidth=1em,%
+        beforeskip=2em,%
+        entryformat=\bfseries\sffamily\LARGE,%
+        pagenumberformat=\bfseries\sffamily\Large,%
+        linefill=\TOCLineLeaderFill
+    ]{tocline}{part}
 %Rest I can change colors using hyperref package(kinda hack, but works nicely). Here I redefined \tableofcontents for that.
 \NewCommandCopy{\toc}{\tableofcontents}
 \renewcommand{\tableofcontents}{{
