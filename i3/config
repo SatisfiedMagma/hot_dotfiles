@@ -208,7 +208,7 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 #Wallpaper config
-exec_always feh --bg-scale /home/pragyan/Pictures/Wallpapers/purple.jpg
+exec_always feh --bg-scale /home/pragyan/Pictures/Wallpapers/blue.jpg
 
 #Polybar config
 exec_always bash ~/.config/polybar/launch.sh --hack
@@ -223,13 +223,13 @@ for_window [class="Spotify"] move to workspace $ws5
 #i3 gaps (Squeezed the life out of me to install it, but I did it!) Ubuntu is just bad, arch I will come one day.
 gaps inner 8
 
-default_border pixel 2
-default_floating_border pixel 2
+default_border pixel 1
+default_floating_border pixel 1
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #8E3596 #8E3596 #ffffff #2e9ef4   #8E3596
-client.focused_inactive #8E3596 #5f676a #ffffff #484e50   #5f676a
-client.unfocused        #8E3596 #222222 #888888 #292d2e   #222222
+client.focused          #008ECC #008ECC #ffffff #008ECC   #008ECC
+client.focused_inactive #008ECC #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #008ECC #222222 #888888 #292d2e   #222222
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
