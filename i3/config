@@ -11,8 +11,8 @@
 
 set $mod Mod4
 
-bindsym $mod+d exec --no-startup-id ~/.config/rofi/launchers/type-6/launcher.sh
-bindsym $mod+p exec --no-startup-id ~/.config/rofi/powermenu/type-6/powermenu.sh
+bindsym $mod+d exec --no-startup-id ~/.config/polybar/hack/scripts/launcher.sh
+bindsym $mod+p exec --no-startup-id ~/.config/polybar/hack/scripts/powermenu.sh
 bindsym $mod+n exec ~/.config/rofi/launchers/type-6/wifimenu.sh 
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -208,7 +208,7 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 #Wallpaper config
-exec_always feh --bg-scale /home/pragyan/Pictures/Wallpapers/blue.jpg
+exec_always feh --bg-scale /home/pragyan/Pictures/Wallpapers/ubuntu-1.png
 
 #Polybar config
 exec_always bash ~/.config/polybar/launch.sh --hack
@@ -222,6 +222,7 @@ for_window [class="Spotify"] move to workspace $ws5
 
 #i3 gaps (Squeezed the life out of me to install it, but I did it!) Ubuntu is just bad, arch I will come one day.
 gaps inner 8
+gaps outer 0
 
 default_border pixel 1
 default_floating_border pixel 1
@@ -234,3 +235,8 @@ client.urgent           #2f343a #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
 client.background       #ffffff
+
+#Screenshots(flameshot)
+exec_always flameshot
+bindsym Print exec flameshot screen
+bindsym Ctrl+Print exec flameshot gui

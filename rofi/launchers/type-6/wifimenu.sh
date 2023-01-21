@@ -13,7 +13,7 @@ elif [[ "$connected" =~ "disabled" ]]; then
 	toggle="直  Enable Wi-Fi"
 fi
 
-dir="$HOME/.config/rofi/launchers/type-6"
+dir="$HOME/.config/rofi/launchers/type-6/"
 
 chosen_network=$(echo -e "$toggle\n$wifi_list" | uniq -u | rofi -dmenu -i -selected-row 1 -p "Wi-Fi SSID: " -theme ${dir}/style-10.rasi )
 chosen_id=$(echo "${chosen_network:3}" | xargs)
