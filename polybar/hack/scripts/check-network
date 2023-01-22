@@ -14,6 +14,6 @@ while true; do
             echo "$connected Online" ; sleep 25
         fi
     else
-        echo "$disconnected Offline" ; sleep 5
+        echo "$disconnected Offline" ; sleep 3
     fi
 done

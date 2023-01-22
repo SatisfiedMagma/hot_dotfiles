@@ -9,7 +9,7 @@ set noshowmode
 set tabstop=2
 set ruler
 set noautoindent
-
+syntax on
 
 "Plugin Setup
 if filereadable(expand("~/.vimrc.plug"))
