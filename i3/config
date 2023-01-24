@@ -207,8 +207,12 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
+#Conky Configuration
+exec_always picom
+exec_always conky -d
+
 #Wallpaper config
-exec_always feh --bg-scale /home/pragyan/Pictures/Wallpapers/ubuntu-1.png
+exec_always feh --bg-scale /home/pragyan/Pictures/Wallpapers/astronaut.jpg
 
 #Polybar config
 exec_always bash ~/.config/polybar/launch.sh --hack
@@ -238,5 +242,5 @@ client.background       #ffffff
 
 #Screenshots(flameshot)
 exec_always flameshot
-bindsym Print exec flameshot screen
+bindsym Print exec flameshot full --clipboard
 bindsym Ctrl+Print exec flameshot gui
