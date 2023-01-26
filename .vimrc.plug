@@ -11,5 +11,6 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'sheerun/vim-polyglot'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'SirVer/ultisnips'
+Plug 'fladson/vim-kitty' 
 
 call plug#end()
