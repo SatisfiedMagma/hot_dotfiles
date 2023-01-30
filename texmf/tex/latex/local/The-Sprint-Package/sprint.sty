@@ -205,7 +205,7 @@ linktoc=all
 
 %Setting up Theorem Environment
 \tcbset{thmbox/.style= {enhanced,frame empty,interior empty,colframe=white, top=2.5mm,
-    coltitle=white,fonttitle=\bfseries \sffamily,colbacktitle=violet!100!white,
+    coltitle=white,fonttitle=\bfseries \sffamily,colbacktitle=violet!100!white, after skip = 12pt, before skip = 10pt,
     borderline={0.5mm}{0mm}{violet!15!},
     borderline={0.5mm}{0mm}{violet!50!white},
     attach boxed title to top left={yshift=-1.5mm},
@@ -291,6 +291,7 @@ linktoc=all
 \newcommand{\dg}{^\circ}
 \newcommand{\bsquare}{\hfill$\blacksquare$\par\medskip}
 \newcommand{\half}{\frac{1}{2}}
+\newcommand{\ds}{\displaystyle}
 
 \DeclareMathOperator*{\lcm}{lcm}
 \DeclareMathOperator*{\argmin}{arg min}

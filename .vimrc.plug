@@ -10,7 +10,9 @@ Plug 'ap/vim-css-color'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'sheerun/vim-polyglot'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'SirVer/ultisnips'
-Plug 'fladson/vim-kitty' 
+Plug 'SirVer/ultisnips',
+Plug 'fladson/vim-kitty', 
+Plug 'hura/vim-asymptote',           { 'for' : 'asy' }
+Plug 'mboughaba/i3config.vim',       { 'for' : 'i3config' }
 
 call plug#end()
