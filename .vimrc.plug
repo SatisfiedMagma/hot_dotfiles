@@ -14,5 +14,6 @@ Plug 'SirVer/ultisnips',
 Plug 'fladson/vim-kitty', 
 Plug 'hura/vim-asymptote',           { 'for' : 'asy' }
 Plug 'mboughaba/i3config.vim',       { 'for' : 'i3config' }
-
+Plug 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp dancer highlight-all-pragmas moose test-more try-tiny' }
+Plug 'ypcrts/securemodelines',
 call plug#end()

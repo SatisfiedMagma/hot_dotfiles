@@ -1,0 +1,15 @@
+import olympiad;
+import olympiad;
+import olympiad;
+size(10cm);
+defaultpen(fontsize(10pt));
+O = (0,0);
+pair O = (0,0);
+pair X = (5,0);
+pair Q = (2,3);
+pair H = foot(A,B,C);
+pair H = foot(Q,O,X);
+print;
+pdf;
+make pdf;
+print pdf;
