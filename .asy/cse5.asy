@@ -77,9 +77,7 @@ int anglefontsize=9;
 
 bool fullbreak=false;
 bool pathflag=true;
-
 //Auxiliary variables 
-
 bool breakflag=false;
 
 //Basic routines

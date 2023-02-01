@@ -145,6 +145,7 @@ linktoc=all
 \theoremstyle{rem}
 \newtheorem*{rem*}{Remark}
 \newtheorem{rem}{Remark}[section]
+\newtheorem{remark}{Remark}[section]
 \fi
 
 %Comment
@@ -221,7 +222,7 @@ linktoc=all
 \ifdeep
 \newtcbtheorem[auto counter,number within=subsubsection]{defi}{Definition}%
 {enhanced,frame empty,interior empty,colframe=white, top=2.5mm,
-    coltitle=white,fonttitle=\bfseries \sffamily,colbacktitle=orange!100!white,
+    coltitle=white,fonttitle=\bfseries \sffamily,colbacktitle=orange!100!white, after skip = 12pt, before skip = 10pt,
     borderline={0.5mm}{0mm}{orange!15!},
     borderline={0.5mm}{0mm}{orange!50!white},
     attach boxed title to top left={yshift=-1.8mm},
@@ -229,7 +230,7 @@ linktoc=all
 \else
 \newtcbtheorem[auto counter,number within=section]{defi}{Definition}%
 {enhanced,frame empty,interior empty,colframe=white, top=2.5mm,
-    coltitle=white,fonttitle=\bfseries \sffamily,colbacktitle=orange!100!white,
+    coltitle=white,fonttitle=\bfseries \sffamily,colbacktitle=orange!100!white, after skip = 12pt, before skip = 10pt,
     borderline={0.5mm}{0mm}{orange!15!},
     borderline={0.5mm}{0mm}{orange!50!white},
     attach boxed title to top left={yshift=-1.8mm},
