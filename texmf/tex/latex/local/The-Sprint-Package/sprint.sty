@@ -293,6 +293,7 @@ linktoc=all
 \newcommand{\bsquare}{\hfill$\blacksquare$\par\medskip}
 \newcommand{\half}{\frac{1}{2}}
 \newcommand{\ds}{\displaystyle}
+\newcommand{\cycsum}{\sum_{\text{cyc}}}
 
 \DeclareMathOperator*{\lcm}{lcm}
 \DeclareMathOperator*{\argmin}{arg min}
@@ -329,6 +330,11 @@ linktoc=all
 \renewcommand*{\eqref}[1]{%
   \hyperref[{#1}]{\textup{\tagform@{\ref*{#1}}}}%
 }
+\makeatother
+
+%Using labels while nesting align and gathered environments(EGMO 2019/1 gave the issue)
+\makeatletter
+\patchcmd{\math@cr@@@align}{\cr}{\global\let\df@label\@empty\cr}{}{}
 \makeatother
 
 %Asymptote (Completely copied from evan.sty for olympiad based diagrams)

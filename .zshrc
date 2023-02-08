@@ -127,4 +127,4 @@ alias combo="open /home/pragyan/Documents/Maths-Olympiads/Handouts_Books/Pablo_C
 eval "$(starship init zsh)"
 
 #fm6000 setup (https://github.com/anhsirk0/fetch-master-6000)
-fm6000 -random
+fm6000 -c blue -random
