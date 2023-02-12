@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 # Starts a scan of available broadcasting SSIDs
 # nmcli dev wifi rescan

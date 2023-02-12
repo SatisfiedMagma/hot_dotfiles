@@ -10,6 +10,7 @@ fi
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+export PYTHONPATH="/home/pragyan/Desktop/Olybase/"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -82,7 +83,6 @@ plugins=(
     # other plugins...
     zsh-autosuggestions
 	  zsh-syntax-highlighting
-		web-search
 )
 source $ZSH/oh-my-zsh.sh
 
@@ -113,13 +113,12 @@ alias zshconfig="vim ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias matholy="cd ~/Documents/Maths-Olympiads/"
 alias olycode="code ~/Documents/Maths-Olympiads/"
-alias mkprob="python ~/Documents/Maths-Olympiads/Useful_Scripts/prob.py"
 alias python="python3"
 alias cscode="code ~/Desktop/Computer_Science"
-alias getsol="python /home/pragyan/Documents/Maths-Olympiads/Useful_Scripts/sol.py"
-alias egmo="open /home/pragyan/Documents/Maths-Olympiads/Handouts_Books/EGMO_Geo.pdf"
-alias mont="open /home/pragyan/Documents/Maths-Olympiads/Handouts_Books/MONT.pdf"
-alias combo="open /home/pragyan/Documents/Maths-Olympiads/Handouts_Books/Pablo_Combo.pdf"
+alias egmo="open /home/pragyan/Documents/Maths-Olympiads/Handouts_Books/EGMO_Geo.pdf&"
+alias mont="open /home/pragyan/Documents/Maths-Olympiads/Handouts_Books/MONT.pdf&"
+alias combo="open /home/pragyan/Documents/Maths-Olympiads/Handouts_Books/Pablo_Combo.pdf&"
+alias sprint="/home/pragyan/Desktop/Olybase/./__main__.py"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
