@@ -9,8 +9,9 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
-export PYTHONPATH="/home/pragyan/Desktop/Olybase/"
+export ZSH="$HOME/.oh-my-zsh" export PYTHONPATH="/home/pragyan/Desktop/Olybase/"
+export VIMINIT='source $MYVIMRC'
+export MYVIMRC='/home/pragyan/.config/vim/.vimrc'
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -82,7 +83,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=( 
     # other plugins...
     zsh-autosuggestions
-	  zsh-syntax-highlighting
+    zsh-syntax-highlighting
 )
 source $ZSH/oh-my-zsh.sh
 
@@ -123,7 +124,9 @@ alias sprint="/home/pragyan/Desktop/Olybase/./__main__.py"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 #Starship configuration?
-eval "$(starship init zsh)"
+#eval "$(starship init zsh)"
+
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 
 #fm6000 setup (https://github.com/anhsirk0/fetch-master-6000)
-fm6000 -c blue -random
+fm6000 -c magenta -random
