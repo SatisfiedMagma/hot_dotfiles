@@ -5,11 +5,12 @@ Plug 'vim-latex/vim-latex'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-python/python-syntax',     { 'for' : 'python' }
-"Plug 'vim-scripts/AutoCompl1Pop'
 Plug 'ap/vim-css-color'
 Plug 'sheerun/vim-polyglot'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'SirVer/ultisnips',
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'ayu-theme/ayu-vim' " or other package manager
+"Plug 'SirVer/ultisnips',
 Plug 'fladson/vim-kitty', 
 Plug 'hura/vim-asymptote',           { 'for' : 'asy' }
 Plug 'mboughaba/i3config.vim',       { 'for' : 'i3config' }

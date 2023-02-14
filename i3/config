@@ -197,7 +197,7 @@ for_window [class="Spotify"] move to workspace $ws5
 
 #i3 gaps (Squeezed the life out of me to install it, but I did it!) Ubuntu is just bad, arch I will come one day. 
 gaps inner 6
-gaps outer 0
+gaps outer 3
 
 default_border pixel 1
 default_floating_border pixel 0
