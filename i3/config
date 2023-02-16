@@ -2,7 +2,7 @@ set $mod Mod4
 
 bindsym $mod+d exec --no-startup-id ~/.config/polybar/hack/scripts/launcher.sh
 bindsym $mod+p exec --no-startup-id ~/.config/polybar/hack/scripts/powermenu.sh
-bindsym $mod+n exec ~/.config/polybar/hack/scripts/rofi/wifimenu.sh 
+bindsym $mod+n exec --no-startup-id ~/.config/polybar/hack/scripts/rofi/wifimenu.sh 
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
