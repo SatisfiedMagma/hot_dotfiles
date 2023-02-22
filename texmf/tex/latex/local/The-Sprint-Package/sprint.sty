@@ -8,6 +8,7 @@
 \tcbuselibrary{skins}
 \usetikzlibrary{calc}
 \RequirePackage{import}
+\RequirePackage{nameref}
 \RequirePackage{hyperref}
 \hypersetup{
 colorlinks=true,
@@ -85,7 +86,7 @@ linktoc=all
 
 %Table of Contents
 \addtokomafont{partentry}{\LARGE\color{violet}} 
-%Advanced part setting to stop interferring with part numbers.
+%Advanced part setting to stop interferring with part numbers. interference = chipak jaata hai numbers, hindi OP
 % \DeclareTOCStyleEntry[%
 %         indent=0em,%
 %         numwidth=3em,%
@@ -114,6 +115,7 @@ linktoc=all
 \newtheoremstyle{prob}{}{}{\normalfont}{}{\bfseries}{\textbf{.}}{.5em}{}
 \theoremstyle{prob}
 \newtheorem{problem}{Problem}
+\newtheorem*{problem*}{Problem}
 \newtheorem{question}{Question}
 
 %Case Environment

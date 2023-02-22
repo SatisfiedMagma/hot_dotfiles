@@ -9,9 +9,10 @@ Plug 'ap/vim-css-color'
 Plug 'sheerun/vim-polyglot'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'jiangmiao/auto-pairs'
-Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'dracula/vim', { 'as': 'dracula'}
 Plug 'ayu-theme/ayu-vim' " or other package manager
 "Plug 'SirVer/ultisnips',
+Plug 'iamcco/markdown-preview.nvim',
 Plug 'fladson/vim-kitty', 
 Plug 'hura/vim-asymptote',           { 'for' : 'asy' }
 Plug 'mboughaba/i3config.vim',       { 'for' : 'i3config' }

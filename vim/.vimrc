@@ -30,4 +30,8 @@ endfunction
 inoremap <silent><expr> <Tab>
       \ coc#pum#visible() ? coc#pum#next(1) :
       \ CheckBackspace() ? "\<Tab>" :
-      \ coc#refresh() 
+      \ coc#refresh()
+
+"Trying to run code automatically with F5
+autocmd Filetype python nnoremap <buffer> <F5> :w<CR>:vert ter python3 "%"<CR>
+set splitright
