@@ -18,6 +18,7 @@ if filereadable(expand("/home/pragyan/.config/vim/.vimrc.plug"))
 	source ~/.config/vim/.vimrc.plug
 endif 
 
+"Color Scheme
 set termguicolors
 colorscheme ayu
 
@@ -35,3 +36,5 @@ inoremap <silent><expr> <Tab>
 "Trying to run code automatically with F5
 autocmd Filetype python nnoremap <buffer> <F5> :w<CR>:vert ter python3 "%"<CR>
 set splitright
+
+"Vim-Commentary keybinding

@@ -2,7 +2,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-export ZSH="$HOME/.oh-my-zsh" export PYTHONPATH="/home/pragyan/Desktop/Olybase/" #Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh" 
+export PYTHONPATH="/home/pragyan/Desktop/Olybase/"
 export VIMINIT='source $MYVIMRC'
 export MYVIMRC='/home/pragyan/.config/vim/.vimrc'
 
@@ -21,8 +22,9 @@ source $ZSH/oh-my-zsh.sh
 
 #Example aliases
 alias zshconfig="vim ~/.zshrc"
+alias i3config="vim ~/.config/i3/config"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias matholy="cd ~/Documents/Maths-Olympiads/"
+alias matholy="~/Documents/Maths-Olympiads/"
 alias olycode="code ~/Documents/Maths-Olympiads/"
 alias python="python3"
 alias cscode="code ~/Desktop/Computer_Science"
