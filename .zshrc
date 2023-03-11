@@ -31,7 +31,7 @@ alias cscode="code ~/Desktop/Computer_Science"
 alias egmo="open /home/pragyan/Documents/Maths-Olympiads/Handouts_Books/EGMO_Geo.pdf&"
 alias mont="open /home/pragyan/Documents/Maths-Olympiads/Handouts_Books/MONT.pdf&"
 alias combo="open /home/pragyan/Documents/Maths-Olympiads/Handouts_Books/Pablo_Combo.pdf&"
-alias sprint="python /home/pragyan/Desktop/Olybase/"
+alias sprint="python3.10 /home/pragyan/Desktop/Olybase/"
 alias ls="exa --icons"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -43,3 +43,21 @@ typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 
 #fm6000 setup (https://github.com/anhsirk0/fetch-master-6000)
 fm6000 -c magenta -random
+
+countdown() {
+    start="$(( $(date '+%s') + $1))"
+    while [ $start -ge $(date +%s) ]; do
+        time="$(( $start - $(date +%s) ))"
+        printf '%s\r' "$(date -u -d "@$time" +%H:%M:%S)"
+        sleep 0.1
+    done
+}
+
+stopwatch() {
+    start=$(date +%s)
+    while true; do
+        time="$(( $(date +%s) - $start))"
+        printf '%s\r' "$(date -u -d "@$time" +%H:%M:%S)"
+        sleep 0.1
+    done
+}

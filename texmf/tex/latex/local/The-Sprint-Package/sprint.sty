@@ -63,8 +63,9 @@ linktoc=all
 %Just add geometry package before this scrlayer-scrpage package if you are using it.
 %Don't add fancyhdr it might get you some trouble with env conflicts.
 \RequirePackage[headsepline=:\the\textwidth,clines]{scrlayer-scrpage} %Header and footers
-\newcommand{\lhead}[1]{\ihead{\normalfont{#1}}} 
-\newcommand{\rhead}[1]{\ohead{\normalfont{\textsf{#1}}}}
+\addtokomafont{pagehead}{\upshape}
+\newcommand{\lhead}[1]{\ihead{#1}} 
+\newcommand{\rhead}[1]{\ohead{\textsf{#1}}}
 \lhead{{\textbf{Pragyan Pranay} (Last edit on \today)}}
 \fi
 
@@ -302,6 +303,7 @@ linktoc=all
 \DeclareMathOperator*{\argmax}{arg max}
 \DeclareMathOperator{\img}{im}
 \DeclareMathOperator{\Img}{Im}
+\DeclareMathOperator{\id}{id}
 \DeclareMathOperator{\Spec}{Spec}
 \DeclareMathOperator{\Hom}{Hom}
 \DeclareMathOperator{\Pow}{Pow}
