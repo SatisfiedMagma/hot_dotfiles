@@ -23,10 +23,10 @@ source $ZSH/oh-my-zsh.sh
 #Example aliases
 alias zshconfig="vim ~/.zshrc"
 alias i3config="vim ~/.config/i3/config"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+alias python="python3"
 alias matholy="~/Documents/Maths-Olympiads/"
 alias olycode="code ~/Documents/Maths-Olympiads/"
-alias python="python3"
+alias basecode="code ~/Desktop/Olybase"
 alias cscode="code ~/Desktop/Computer_Science"
 alias egmo="open /home/pragyan/Documents/Maths-Olympiads/Handouts_Books/EGMO_Geo.pdf&"
 alias mont="open /home/pragyan/Documents/Maths-Olympiads/Handouts_Books/MONT.pdf&"
@@ -43,21 +43,3 @@ typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 
 #fm6000 setup (https://github.com/anhsirk0/fetch-master-6000)
 fm6000 -c magenta -random
-
-countdown() {
-    start="$(( $(date '+%s') + $1))"
-    while [ $start -ge $(date +%s) ]; do
-        time="$(( $start - $(date +%s) ))"
-        printf '%s\r' "$(date -u -d "@$time" +%H:%M:%S)"
-        sleep 0.1
-    done
-}
-
-stopwatch() {
-    start=$(date +%s)
-    while true; do
-        time="$(( $(date +%s) - $start))"
-        printf '%s\r' "$(date -u -d "@$time" +%H:%M:%S)"
-        sleep 0.1
-    done
-}

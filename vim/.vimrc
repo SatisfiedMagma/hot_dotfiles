@@ -11,6 +11,7 @@ set shiftwidth=4
 set ruler
 set autoindent
 set smartindent
+set splitright "terminal position
 syntax on
 
 "Plugin Setup
@@ -33,8 +34,5 @@ inoremap <silent><expr> <Tab>
       \ CheckBackspace() ? "\<Tab>" :
       \ coc#refresh()
 
-"Trying to run code automatically with F5
+"Python Support
 autocmd Filetype python nnoremap <buffer> <F5> :w<CR>:vert ter python3 "%"<CR>
-set splitright
-
-"Vim-Commentary keybinding
