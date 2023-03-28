@@ -28,9 +28,7 @@ alias matholy="~/Documents/Maths-Olympiads/"
 alias olycode="code ~/Documents/Maths-Olympiads/"
 alias basecode="code ~/Desktop/Olybase"
 alias cscode="code ~/Desktop/Computer_Science"
-alias egmo="open /home/pragyan/Documents/Maths-Olympiads/Handouts_Books/EGMO_Geo.pdf&"
-alias mont="open /home/pragyan/Documents/Maths-Olympiads/Handouts_Books/MONT.pdf&"
-alias combo="open /home/pragyan/Documents/Maths-Olympiads/Handouts_Books/Pablo_Combo.pdf&"
+alias books="command ls ~/Documents/Maths-Olympiads/Handouts_Books/*.pdf | fzf | xargs -I{} bash -c \"zathura {} &\""
 alias sprint="python3.10 /home/pragyan/Desktop/Olybase/"
 alias ls="exa --icons"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
@@ -43,3 +41,6 @@ typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 
 #fm6000 setup (https://github.com/anhsirk0/fetch-master-6000)
 fm6000 -c magenta -random
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_OPS="--extended"
