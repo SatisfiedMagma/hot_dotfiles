@@ -196,6 +196,7 @@ for_window [class="Brave"] move to workspace $ws1
 for_window [class="Code"] move to workspace $ws4
 for_window [class="Spotify"] move to workspace $ws5
 for_window [class="org-geogebra-desktop-GeoGebra3D"] move to workspace $ws6
+for_window [class="Google-chrome"] move to workspace $ws1
 
 #i3 gaps (Squeezed the life out of me to install it, but I did it!) Ubuntu is just bad, arch I will come one day. 
 gaps inner 6

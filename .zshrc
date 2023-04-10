@@ -28,9 +28,11 @@ alias matholy="~/Documents/Maths-Olympiads/"
 alias olycode="code ~/Documents/Maths-Olympiads/"
 alias basecode="code ~/Desktop/Olybase"
 alias cscode="code ~/Desktop/Computer_Science"
-alias books="command ls ~/Documents/Maths-Olympiads/Handouts_Books/*.pdf | fzf | xargs -I{} bash -c \"zathura {} &\""
+alias book="command ls ~/Documents/Maths-Olympiads/Handouts_Books/*.pdf | fzf | xargs -I{} bash -c \"zathura {} &\""
+alias disupdate="wget -O discord.deb \"https://discordapp.com/api/download?platform=linux&format=deb\""
 alias sprint="python3.10 /home/pragyan/Desktop/Olybase/"
 alias ls="exa --icons"
+alias cntdir="find . -type d | wc -l"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
