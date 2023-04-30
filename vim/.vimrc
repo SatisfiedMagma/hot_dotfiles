@@ -6,7 +6,7 @@ set mouse=a
 set showmatch "matching brackets
 set ttyfast "faster scrolling speed
 set noshowmode
-set tabstop=4
+set tabstop=4 
 set shiftwidth=4
 set ruler
 set autoindent
@@ -23,7 +23,12 @@ endif
 set termguicolors
 colorscheme ayu
 
-" use <tab> to trigger completion and navigate to the next complete item
+"Airline Configuration
+let g:airline_theme='ayu_dark'
+let g:airline#extensions#whitespace#enabled = 0
+
+"coc-config
+"Tab trigger
 function! CheckBackspace() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
@@ -33,6 +38,21 @@ inoremap <silent><expr> <Tab>
       \ coc#pum#visible() ? coc#pum#next(1) :
       \ CheckBackspace() ? "\<Tab>" :
       \ coc#refresh()
+
+"Ultisnips Configuration
+" let g:UltiSnipsExpandTrigger="<tab>"
+" let g:UltiSnipsJumpForwardTrigger="<c-b>"
+" let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+"vimtex Configuration
+let g:tex_flavor='latex'
+let g:vimtex_view_method='zathura'
+let g:vimtex_quickfix_mode=0
+" set conceallevel=1
+" let g:tex_conceal='abdmg'
+
+"NERDTree Configuration
+map <C-b> :NERDTreeToggle<CR>
 
 "Python Support
 autocmd Filetype python nnoremap <buffer> <F5> :w<CR>:vert ter python3 "%"<CR>
