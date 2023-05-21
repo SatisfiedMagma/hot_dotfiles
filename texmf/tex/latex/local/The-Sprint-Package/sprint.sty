@@ -87,16 +87,16 @@ linktoc=all
 
 %Table of Contents
 \addtokomafont{partentry}{\LARGE\color{violet}} 
-%Advanced part setting to stop interferring with part numbers. interference = chipak jaata hai numbers, hindi OP
-% \DeclareTOCStyleEntry[%
-%         indent=0em,%
-%         numwidth=3em,%
-%         pagenumberwidth=1em,%
-%         beforeskip=2em,%
-%         entryformat=\bfseries\sffamily\LARGE,%
-%         pagenumberformat=\bfseries\sffamily\Large,%
-%         linefill=\TOCLineLeaderFill
-%     ]{tocline}{part}
+% Advanced part setting to stop interferring with part numbers. interference = chipak jaata hai numbers, hindi OP
+\DeclareTOCStyleEntry[%
+        indent=0em,%
+        numwidth=3.5em,%
+        pagenumberwidth=1em,%
+        beforeskip=2em,%
+        entryformat=\bfseries\sffamily\LARGE,%
+        pagenumberformat=\bfseries\sffamily\Large,%
+        % linefill=\TOCLineLeaderFill
+    ]{tocline}{part}
 %Rest I can change colors using hyperref package(kinda hack, but works nicely). Here I redefined \tableofcontents for that.
 \NewCommandCopy{\toc}{\tableofcontents}
 \renewcommand{\tableofcontents}{{
@@ -308,6 +308,7 @@ linktoc=all
 \DeclareMathOperator{\Hom}{Hom}
 \DeclareMathOperator{\Pow}{Pow}
 \DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\rad}{rad}
 
 %Important Environments
 \newenvironment{sol}{%

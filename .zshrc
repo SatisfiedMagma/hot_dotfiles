@@ -34,6 +34,8 @@ alias sprint="python3.10 /home/pragyan/Desktop/Olybase/"
 alias ls="exa --icons"
 alias cntdir="find . -type d | wc -l"
 alias copy="xclip -selection clipboard"
+alias unit="command ls /home/pragyan/Downloads/OTIS_Units/*.pdf | fzf | xargs -I{} bash -c \"zathura {} &\""
+alias disupdate="wget -O discord.deb \"https://discordapp.com/api/download?platform=linux&format=deb\""
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
