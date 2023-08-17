@@ -42,6 +42,9 @@ linktoc=all
 \RequirePackage{float}
 \RequirePackage{bbding} %Loads a lot nice symbols
 \RequirePackage{lmodern}
+\RequirePackage{chngcntr}
+\RequirePackage{subcaption}
+\RequirePackage{caption}
 %\RequirePackage{libertinus}
 
 %If conditions(hopefully)
@@ -117,7 +120,6 @@ linktoc=all
 \theoremstyle{prob}
 \newtheorem{problem}{Problem}
 \newtheorem*{problem*}{Problem}
-\newtheorem{question}{Question}
 
 %Case Environment
 \newtheoremstyle{case}{}{}{}{}{\bfseries \sffamily \color{red}}{\textbf{.}}{.5em}{}
@@ -296,7 +298,7 @@ linktoc=all
 \newcommand{\bsquare}{\hfill$\blacksquare$\par\medskip}
 \newcommand{\half}{\frac{1}{2}}
 \newcommand{\ds}{\displaystyle}
-\newcommand{\cycsum}{\sum_{\text{cyc}}}
+\newcommand{\cycsum}{\sum_{\mathrm{cyc}}}
 
 \DeclareMathOperator*{\lcm}{lcm}
 \DeclareMathOperator*{\argmin}{arg min}

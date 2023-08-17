@@ -162,9 +162,9 @@ bindsym $mod+r mode "resize"
 focus_follows_mouse_no
 
 # Pulse Audio controls
-bindsym F8 exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym F7 exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym F6 exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+bindsym F7 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% #decrease sound volume 
+bindsym F8 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% #increase sound volume  
+bindsym F6 exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK toggle # mute sound
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
