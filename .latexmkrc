@@ -7,7 +7,6 @@ add_cus_dep("asy","pdf",0,"asy");
 add_cus_dep("asy","tex",0,"asy");
 
 # Set the latexmk options, including --shell-escape
-$latex = 'pdflatex --shell-escape %O %S';
-$pdf_mode = 1;
+set_tex_cmds( '--shell-escape %O %S' );
 
 # vim: ft=perl
