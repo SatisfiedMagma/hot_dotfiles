@@ -50,3 +50,5 @@ fm6000 -c magenta -random
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPS="--extended"
+
+export PATH=$PATH:/home/pragyan/.spicetify

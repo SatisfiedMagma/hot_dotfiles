@@ -1,0 +1,12 @@
+#!/bin/zsh
+
+extensions=(".aux" ".fdb_latexmk" ".fls" ".asy" ".log" ".pre" ".synctex.gz" ".toc" ".glo" ".out" ".gls" ".ist" ".glg")
+files_array=($(ls))
+
+for file in "${files_array[@]}"; do
+    for ext in "${extensions[@]}"; do
+        if [[ $file == *$ext ]]; then
+            rm "$file"
+        fi
+    done
+done
