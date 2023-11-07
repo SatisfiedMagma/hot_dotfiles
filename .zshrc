@@ -23,14 +23,14 @@ source $ZSH/oh-my-zsh.sh
 #cool aliases
 alias zshconfig="vim ~/.zshrc"
 alias i3config="vim ~/.config/i3/config"
-alias python="python3"
+alias python="python3.11"
 alias matholy="~/Documents/Maths-Olympiads/"
 alias olycode="code ~/Documents/Maths-Olympiads/"
 alias basecode="code ~/Desktop/Olybase"
 alias cscode="code ~/Desktop/Computer_Science"
 alias book="command ls ~/Documents/Maths-Olympiads/Handouts_Books/*.pdf | fzf | xargs -I{} bash -c \"zathura {} &\"" #evan-so-good
 alias disupdate="wget -O discord.deb \"https://discordapp.com/api/download?platform=linux&format=deb\""
-alias sprint="python3.10 /home/pragyan/Desktop/Olybase/"
+alias sprint="python3.11 /home/pragyan/Desktop/Olybase/"
 alias ls="exa --icons"
 alias cntdir="find . -type d | wc -l"
 alias copy="xclip -selection clipboard"

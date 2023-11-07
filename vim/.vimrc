@@ -10,6 +10,7 @@ set tabstop=4
 set shiftwidth=4
 set ruler
 set autoindent
+" set 
 set smartindent
 set splitright "terminal position
 syntax on

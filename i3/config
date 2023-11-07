@@ -180,7 +180,7 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 #Conky Configuration
-exec_always picom
+# exec_always picom
 #exec_always conky -d
 
 #Wallpaper config
