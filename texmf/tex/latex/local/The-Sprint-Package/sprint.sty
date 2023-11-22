@@ -64,7 +64,7 @@ linktoc=all
 
 \else
 %Just add geometry package before this scrlayer-scrpage package if you are using it.
-%Don't add fancyhdr it might get you some trouble with env conflicts.
+%Don't add fancyhdr it might get you some trouble with env conflicts. And KOMA script doesn't like it as well.
 \RequirePackage[headsepline=:\the\textwidth,clines]{scrlayer-scrpage} %Header and footers
 \addtokomafont{pagehead}{\upshape}
 \newcommand{\lhead}[1]{\ihead{#1}} 
@@ -114,6 +114,10 @@ linktoc=all
 \makeatletter
 \@addtoreset{section}{part}
 \makeatother
+
+%setting distance betwen paragraphs
+\setparsizes{20pt}{4pt}{0pt plus 1fil}
+%syntax: \setparsizes{indent}{distance}{last-line end space}
 
 %Theorem Environments
 \newtheoremstyle{prob}{}{}{\normalfont}{}{\bfseries}{\textbf{.}}{.5em}{}
@@ -311,6 +315,7 @@ linktoc=all
 \DeclareMathOperator{\Pow}{Pow}
 \DeclareMathOperator{\ord}{ord}
 \DeclareMathOperator{\rad}{rad}
+\DeclareMathOperator{\cis}{cis}
 
 %Important Environments
 \newenvironment{sol}{%
@@ -345,7 +350,6 @@ linktoc=all
 \makeatother
 
 %Asymptote (Completely copied from evan.sty for olympiad based diagrams)
-
 \RequirePackage{asymptote}
 \begin{asydef}
     defaultpen(fontsize(10pt));
@@ -392,5 +396,37 @@ linktoc=all
         return g;
     }
 \end{asydef}
+
+%my lstlstings config
+\makeatletter
+\@ifpackageloaded{lstlistings}{%
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+    }%
+}
+    {%
+        %else condition, obviously left blank
+    }
+\makeatother
 
 \endinput
