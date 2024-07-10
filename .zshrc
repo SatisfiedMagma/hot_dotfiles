@@ -17,19 +17,18 @@ plugins=(
     # other plugins...
     zsh-autosuggestions
     zsh-syntax-highlighting
+    archlinux
 )
 source $ZSH/oh-my-zsh.sh
 
 #cool aliases
 alias zshconfig="vim ~/.zshrc"
 alias i3config="vim ~/.config/i3/config"
-alias python="python3.11"
 alias matholy="~/Documents/Maths-Olympiads/"
 alias olycode="code ~/Documents/Maths-Olympiads/"
 alias basecode="code ~/Desktop/Olybase"
-alias cscode="code ~/Desktop/Computer_Science"
 alias book="command ls ~/Documents/Maths-Olympiads/Handouts_Books/*.pdf | fzf | xargs -I{} bash -c \"zathura {} &\"" #evan-so-good
-alias sprint="python3.11 /home/pragyan/Desktop/Olybase/"
+alias sprint="python /home/pragyan/Desktop/Sprint-DB-Manager/"
 alias ls="exa --icons"
 alias cntdir="find . -type d | wc -l"
 alias copy="xclip -selection clipboard"
@@ -39,15 +38,13 @@ alias unit="command ls /home/pragyan/Downloads/OTIS_Units/*.pdf | fzf | xargs -I
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Starship configuration?
-# eval "$(starship init zsh)"
-
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 
 #fm6000 setup (https://github.com/anhsirk0/fetch-master-6000)
-fm6000 --file /home/pragyan/hot_dotfiles/scripts/astro.txt --color blue
+# fm6000 --file /home/pragyan/hot_dotfiles/scripts/astro.txt --color blue
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPS="--extended"
 
 export PATH=$PATH:/home/pragyan/.spicetify
+# export PATH=$PATH:/home/pragyan/.local/bin
