@@ -48,3 +48,6 @@ export FZF_DEFAULT_OPS="--extended"
 
 export PATH=$PATH:/home/pragyan/.spicetify
 # export PATH=$PATH:/home/pragyan/.local/bin
+
+# Created by `pipx` on 2024-07-10 18:42:08
+export PATH="$PATH:/home/pragyan/.local/bin"

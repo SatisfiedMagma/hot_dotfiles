@@ -45,3 +45,4 @@ map <C-b> :NERDTreeToggle<CR>
 
 "Python Support
 autocmd Filetype python nnoremap <buffer> <F5> :w<CR>:vert ter python3 "%"<CR>
+autocmd Filetype c nnoremap <buffer> <F5> :w<CR>:!gcc -o %:r % && ./%:r<CR>
