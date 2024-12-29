@@ -3,7 +3,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 export ZSH="$HOME/.oh-my-zsh" 
-export PYTHONPATH="/home/pragyan/Desktop/Olybase/"
+# export PYTHONPATH="/home/pragyan/Desktop/Olybase/"
 export VIMINIT='source $MYVIMRC'
 export MYVIMRC='/home/pragyan/.config/vim/.vimrc'
 
@@ -41,7 +41,7 @@ alias unit="command ls /home/pragyan/Downloads/OTIS_Units/*.pdf | fzf | xargs -I
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 
 #fm6000 setup (https://github.com/anhsirk0/fetch-master-6000)
-# fm6000 --file /home/pragyan/hot_dotfiles/scripts/astro.txt --color blue
+# fm6000 --c magenta --random
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPS="--extended"
