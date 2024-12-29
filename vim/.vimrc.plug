@@ -12,6 +12,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'honza/vim-snippets',
 Plug 'jiangmiao/auto-pairs',
 Plug 'ayu-theme/ayu-vim',
+Plug 'ghifarit53/tokyonight-vim',
 Plug 'dracula/vim', { 'name': 'dracula' }
 " Plug 'SirVer/ultisnips',
 Plug 'fladson/vim-kitty', 
