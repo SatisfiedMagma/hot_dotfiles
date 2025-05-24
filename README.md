@@ -61,3 +61,12 @@ There are quite a lot of configurations in the file. The harder part is download
 Download ``zsh`` using ``pacman`` and the ``powerlevel10k`` using git.
 
 Add the required packages with git cloning in the ``.zshrc`` file. Rest, you're good to go!
+
+## Pacman
+
+There aren't many configurations which I have but, but you should open the pacman configuration file with 
+
+```
+sudo vim /etc/pacman.conf
+```
+and give the password. Go down a bit and uncomment ``Color``, ``VerbosePkgLists`` and lower the number of ``ParallelDownloads`` to something like 2 or 3, whatever feels good. Also add the line ``ILoveCandy`` for fancier pacman. That's all you need.

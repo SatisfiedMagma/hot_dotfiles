@@ -1,0 +1,6 @@
+#!/bin/bash
+
+wget https://raw.githubusercontent.com/vEnhance/dotfiles/main/texmf/tex/latex/evan/evan.sty -O /tmp/evan.sty
+rm /home/pragyan/texmf/tex/latex/local/evan/evan.sty
+mv /tmp/evan.sty /home/pragyan/texmf/tex/latex/local/evan/evan.sty
+

@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 extensions=(".aux" ".fdb_latexmk" ".fls" ".asy" ".log" ".pre" ".synctex.gz" ".toc" ".glo" ".out" ".gls" ".ist" ".glg" ".dvi" ".out.ps" ".synctex(busy)")
 files_array=($(ls))
