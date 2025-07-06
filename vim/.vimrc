@@ -24,7 +24,7 @@ set termguicolors
 colorscheme ayu
 
 "Airline Configuration
-let g:airline_theme='ayu_dark'
+let g:airline_theme='ayu'
 let g:airline#extensions#whitespace#enabled = 0
 
 "coc-config

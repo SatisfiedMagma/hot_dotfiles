@@ -22,4 +22,7 @@ Plug 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp dancer highlig
 Plug 'ypcrts/securemodelines',
 Plug 'Fymyte/rasi.vim',
 Plug 'chrisbra/csv.vim', 			{ 'for' : 'csv' }
+Plug 'joshdick/onedark.vim',
+Plug 'Mofiqul/adwaita.nvim',
+Plug 'gertjanreynaert/cobalt2-vim-theme',
 call plug#end()
