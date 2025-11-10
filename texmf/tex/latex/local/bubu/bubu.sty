@@ -1,0 +1,1021 @@
+% ================================================== %
+% ============== PROVIDES THE PACKAGE ============== %
+% ================================================== %
+
+% This sty file is heavily inspired by vEnhance's
+% and sohamcho8's style files.
+% Most of the credit for this file goes to them.
+% The design in the bottom-left corner of the
+% fancy cover page is due to Jishnu.
+
+% My sty file can be found at
+% https://github.com/Bubu-Droid/dotfiles/blob/main/texmf/tex/latex/sty/bubu.sty
+
+% vEnhance's sty file can be found at:
+% https://github.com/vEnhance/dotfiles/blob/main/texmf/tex/latex/evan/evan.sty
+
+% sohamcho8's sty file can be found at:
+% https://github.com/sohamch08/LaTeX/tree/master
+% Alternate resource:
+% https://github.com/SeniorMars/dotfiles/tree/main/latex_template
+
+% {{{ PROVIDES THE PACKAGE
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{bubu}[2025/05/19 Custom LaTeX style by Bubu]
+
+% }}}
+
+
+% ================================================== %
+% ================== USER OPTIONS ================== %
+% ================================================== %
+
+
+% {{{ USER OPTIONS
+
+\newif\ifbubuhdr\bubuhdrtrue
+\newif\ifbubuauthor\bubuauthortrue
+\newif\ifbubudate\bubudatetrue
+\newif\ifbubutitle\bubutitletrue
+\newif\ifbubutitlemark\bubutitlemarktrue
+\newif\ifbubusecthm\bubusecthmtrue
+\newif\ifbubucs\bubucsfalse
+\newif\ifbubuepi\bubuepifalse
+\newif\ifbububib\bububibfalse
+\newif\ifbubuhints\bubuhintsfalse
+\newif\ifbubuasy\bubuasytrue
+\newif\ifbubumax\bubumaxtrue
+\newif\ifbububon\bububonfalse
+\newif\ifbubucountcont\bubucountconttrue
+\newif\ifbubucover\bubucoverfalse
+
+\DeclareOption{nohdr}{\bubuhdrfalse}
+\DeclareOption{noauthor}{\bubuauthorfalse}
+\DeclareOption{nodate}{\bubudatefalse}
+\DeclareOption{notitle}{\bubutitlefalse}
+\DeclareOption{sectionmark}{\bubutitlemarkfalse}
+\DeclareOption{nosecthm}{\bubusecthmfalse}
+\DeclareOption{cs}{\bubucstrue}
+\DeclareOption{epi}{\bubuepitrue}
+\DeclareOption{bib}{\bububibtrue}
+\DeclareOption{hints}{\bubuhintstrue}
+\DeclareOption{noasy}{\bubuasyfalse}
+\DeclareOption{min}{\bubumaxfalse\bubuasyfalse}
+\DeclareOption{bon}{\bububontrue}
+\DeclareOption{bon}{\bububontrue}
+\DeclareOption{nocountcont}{\bubucountcontfalse}
+\DeclareOption{fancycover}{\bubucovertrue}
+
+\ProcessOptions\relax
+
+% }}}
+
+
+% ================================================== %
+% =============== REQUIRED PACKAGES ================ %
+% ================================================== %
+
+
+% {{{ REQUIRED PACKAGES
+
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+\RequirePackage{amsthm}
+\RequirePackage[minimal]{yhmath}
+\RequirePackage[shortlabels]{enumitem}
+\RequirePackage{mathtools}
+\RequirePackage{graphicx}
+\RequirePackage{xparse}
+
+\ifbubumax
+  \RequirePackage[utf8]{inputenc}
+  \RequirePackage[T1]{fontenc}
+  \RequirePackage{lmodern}
+  \RequirePackage[headsepline]{scrlayer-scrpage}
+  \RequirePackage[svgnames,dvipsnames]{xcolor}
+  \RequirePackage{tikz}
+  \RequirePackage{varwidth}
+  % \RequirePackage{thmtools}
+  \RequirePackage[most]{tcolorbox}
+  % \RequirePackage[framemethod=TikZ]{mdframed}
+  \RequirePackage[colorlinks=true,pdfusetitle,hypertexnames=false]{hyperref}
+  \hypersetup{pdfkeywords={bubu.sty},pdfsubject={www.bubudroid.me}}
+  \hypersetup{%
+    urlcolor=RoyalBlue,%
+    linkcolor=RoyalBlue,%
+    citecolor=ForestGreen%
+  }
+  \RequirePackage[left=0.9in,right=0.9in,top=1.1in,bottom=1.2in]{geometry}
+  \RequirePackage[nameinlink]{cleveref}
+  \Crefname{theorem}{\bfseries\sffamily Theorem}{\bfseries\sffamily Theorems}
+  \Crefname{lemma}{\bfseries\sffamily Lemma}{\bfseries\sffamily Lemmas}
+  \Crefname{proposition}{\bfseries\sffamily Proposition}{\bfseries\sffamily Propositions}
+  \Crefname{corollary}{\bfseries\sffamily Corollary}{\bfseries\sffamily Corollaries}
+  \Crefname{algorithm}{\bfseries\sffamily Algorithm}{\bfseries\sffamily Algorithms}
+  \Crefname{claim}{\bfseries\sffamily Claim}{\bfseries\sffamily Claims}
+  \Crefname{example}{\bfseries\sffamily Example}{\bfseries\sffamily Examples}
+  \Crefname{remark}{\bfseries\sffamily Remark}{\bfseries\sffamily Remarks}
+  \Crefname{answer}{\bfseries\sffamily Answer}{\bfseries\sffamily Answers}
+  \Crefname{definition}{\bfseries\sffamily Definition}{\bfseries\sffamily Definitions}
+  \Crefname{exercise}{\bfseries\sffamily Exercise}{\bfseries\sffamily Exercises}
+  \Crefname{problem}{\bfseries\sffamily Problem}{\bfseries\sffamily Problems}
+  \Crefname{ques}{\bfseries\sffamily Question}{\bfseries\sffamily Questions}
+  \Crefname{notation}{\bfseries\sffamily Notation}{\bfseries\sffamily Notations}
+  \RequirePackage{microtype}
+  \RequirePackage{perpage}
+  \RequirePackage[makeroom]{cancel}
+  \RequirePackage{caption}
+\else
+  \RequirePackage[colorlinks=true,linkcolor=blue]{hyperref}
+\fi
+
+% }}}
+
+
+% ================================================== %
+% ================= PERSONAL STYLING =============== %
+% ================================================== %
+
+
+% {{{ PERSONAL STYLING
+
+\allowdisplaybreaks
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1em}
+
+\renewcommand{\baselinestretch}{1.1}
+
+\let\oldemptyset\emptyset
+\let\emptyset\varnothing
+
+
+\ifbubumax
+  \definecolor{LightGray}{gray}{0.9}
+  \definecolor{deepbluebg}{HTML}{F2F2F9}
+  \definecolor{newbluebg}{HTML}{F2FBFC}
+  \definecolor{deepbluefg}{HTML}{00007B}
+  \definecolor{lightbluebg}{HTML}{E5E5FF}
+  \definecolor{lightbluefg}{HTML}{3F3FA3}
+  \definecolor{lightgreen}{HTML}{388C46}
+  \definecolor{darkgreenbg}{HTML}{73A840}
+  \definecolor{darkgreenfg}{HTML}{003700}
+  \definecolor{bubupink}{HTML}{06608F}
+  \definecolor{bubucream}{HTML}{00AAA0}
+  \definecolor{bubured}{HTML}{D51645}
+
+  \newcommand{\bubuS}{{\fontfamily{lmr}\selectfont\S}} %`put' font family is another good option
+  % \newcommand{\bubuS}{{\fontfamily{lmr}\selectfont\maltese}} %`put' font family is another good option
+
+  \renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+  \MakePerPage{footnote}
+  \let\oldfootnote\footnote
+  \renewcommand\footnote[1]{%
+  \oldfootnote{\hspace{1mm}#1}%
+  }
+
+  % \renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+  \renewcommand{\textbf}[1]{%
+    \textcolor{deepbluefg}{\bfseries{#1}}%
+  }
+
+
+  \captionsetup{%
+    labelfont={bf,sf},%
+    textfont={sf}%
+  }
+\fi
+
+% }}}
+
+
+% ================================================== %
+% =================== PAGE SETUP =================== %
+% ================================================== %
+
+
+% {{{ PAGE SETUP
+
+\ifbubumax
+  \addtokomafont{subtitle}{\Large}
+  \setkomafont{author}{\Large\scshape}
+  \setkomafont{date}{\Large\normalsize}
+
+  \makeatletter
+  \providecommand{\thetitle}{\@title}
+  \providecommand{\theauthor}{\@author}
+  \providecommand{\thedate}{\@date}
+  \makeatother
+
+  \clearpairofpagestyles
+  \pagestyle{scrheadings}
+
+  \newcommand{\bubuiheadcontent}{}
+  \newcommand{\bubuoheadcontent}{}
+
+
+  \ifbubuhdr
+    \ifbubuauthor
+      \ifbubudate
+        \renewcommand{\bubuiheadcontent}{\footnotesize\textbf{\theauthor} --- \textcolor{bubured}{\thedate}}
+      \else
+        \renewcommand{\bubuiheadcontent}{\footnotesize\textbf{\theauthor}}
+      \fi
+    \else
+      \ifbubudate
+        \renewcommand{\bubuiheadcontent}{\textcolor{bubured}{\thedate}}
+      \else
+        \renewcommand{\bubuiheadcontent}{}
+      \fi
+    \fi
+    \ifbubutitle
+      \ifbubutitlemark
+        \renewcommand{\bubuoheadcontent}{\footnotesize\textbf{\thetitle}}
+      \else
+        \renewcommand{\bubuoheadcontent}{\rightmark}
+      \fi
+    \else
+      \renewcommand{\bubuoheadcontent}{}
+    \fi
+  \fi
+
+  \makeatletter
+  \@ifclassloaded{scrartcl}{%
+    \renewcommand{\headfont}{}%
+    \ihead{\bubuiheadcontent}%
+    \automark{section}%
+    \renewcommand*{\sectionmark}[1]{%
+      \markright{\footnotesize\textbf{\thesection. #1}}%
+    }%
+    \chead{}%
+    \ohead{\bubuoheadcontent}%
+    \cfoot{\pagemark}%
+  }{%
+    \@ifclassloaded{scrreprt}{%
+      % scrreprt settings
+    }{%
+      \@ifclassloaded{scrbook}{%
+        % scrbook settings
+      }{%
+        \typeout{Unknown KOMA class!}%
+      }%
+    }%
+  }
+  \makeatother
+\fi
+
+% }}}
+
+
+% ================================================== %
+% ================ OPTIONAL PACKAGES =============== %
+% ================================================== %
+
+
+% {{{ OPTIONAL PACKAGES
+
+% minted setup
+\ifbubucs
+  \RequirePackage{minted}
+  \setminted{%
+    frame=lines,%
+    framesep=2mm,%
+    baselinestretch=1.2,%
+    bgcolor=LightGray,%
+    fontsize=\footnotesize,%
+    linenos,%
+    tabsize=2%
+  }
+\fi
+
+% epigraph setup
+\ifbubuepi
+  \RequirePackage{epigraph}
+  \renewcommand{\epigraphsize}{\scriptsize}
+  \renewcommand{\epigraphwidth}{60ex}
+\fi
+
+% bib config which is blatantly copied from evan.sty
+\ifbububib
+  \RequirePackage[backend=biber,backref=true,style=alphabetic]{biblatex}
+  \DeclareFieldFormat{labelalpha}{\textbf{\small #1}} % citation ID's in small-bold
+  \DefineBibliographyStrings{english}{%
+    backrefpage  = {cited p.},% for single page number
+    backrefpages = {cited pp.}% for multiple page numbers
+  }
+  \DeclareFieldFormat{journaltitle}{\mkbibemph{#1},} % italic journal title with comma
+  \DeclareFieldFormat[inbook,thesis]{title}{\mkbibemph{#1}\addperiod} % italic title with period
+  \DeclareFieldFormat[article]{title}{#1} % title of journal article is printed as normal text
+  \DeclareFieldFormat[article]{volume}{\textbf{#1}\addcolon\space} % bold volume numbers
+  % Separate ISBN-13 field
+  \DeclareSourcemap{\maps[datatype=bibtex]{\map{\step[fieldsource=ISBN-13,fieldtarget=ISBN]}}}
+  % Evan likes small caps for bibliography author names
+  \renewcommand{\mkbibnamegiven}[1]{\textsc{#1}}
+  \renewcommand{\mkbibnamefamily}[1]{\textsc{#1}}
+  \renewcommand{\mkbibnameprefix}[1]{\textsc{#1}}
+  \renewcommand{\mkbibnamesuffix}[1]{\textsc{#1}}
+  % Drop trailing punctuation in bibliography names
+  \renewcommand{\finentrypunct}{}
+\fi
+
+% hints setup
+\ifbubuhints
+  \RequirePackage{scrambledenvs}
+  \newscrambledenv{hint}
+  \hintprintenv{\begin{enumerate}\setcounter{enumi}{\the\numexpr\csname scrambledenvs@hint@start\endcsname-1\relax}}{\end{enumerate}}
+  \hintlabelfont{\bfseries\sffamily}
+\fi
+
+% bon setup
+\ifbububon
+  \RequirePackage{pythontex}
+  \setpythontexoutputdir{.}
+  \newcommand{\bonhook}[1]{%
+    \normalmarginpar%
+    \noindent%
+    \marginpar{\hspace*{1em}\scriptsize\ttfamily\color{Green}#1}%
+  }
+  \newcommand{\boninclude}[2]{%
+    \py{boninclude(r"#1", r"#2")}%
+  }
+\fi
+
+% cover page setup
+
+\ifbubucover
+  \RequirePackage{tikz-cd}
+  \RequirePackage{pgfplots}
+
+  \def\maincolor{deepbluefg}
+  \def\secondcolor{bubupink}
+
+  \newcommand{\changemaincolor}[1]{\def\maincolor{#1}}
+  \newcommand{\changesecondcolor}[1]{\def\secondcolor{#1}}
+
+  \newcommand\toprightdecoration{%
+  \begin{tikzpicture}[remember picture,overlay,shorten >= -10pt]
+  \coordinate (aux1) at ([yshift=-15pt]current page.north east);
+  \coordinate (aux2) at ([yshift=-410pt]current page.north east);
+  \coordinate (aux3) at ([xshift=-4.5cm]current page.north east);
+  \coordinate (aux4) at ([yshift=-150pt]current page.north east);
+
+  \begin{scope}[\maincolor!63,line width=12pt,rounded corners=12pt]
+  \draw[\maincolor!63]
+    (aux1) -- coordinate (a) 
+    ++(225:5) --
+    ++(-45:5.1) coordinate (b);
+  \draw[shorten <= -10pt]
+    (aux3) --
+    (a) --
+    (aux1);
+  \draw[opacity=0.6,\secondcolor!50!\maincolor,shorten <= -10pt]
+    (b) --
+    ++(225:2.2) --
+    ++(-45:2.2);
+  \end{scope}
+  \draw[\maincolor!70!\secondcolor,line width=8pt,rounded corners=8pt,shorten <= -10pt]
+    (aux4) --
+    ++(225:0.8) --
+    ++(-45:0.8);
+  \begin{scope}[\secondcolor!70,line width=6pt,rounded corners=8pt]
+  \draw[shorten <= -10pt]
+    (aux2) --
+    ++(225:3) coordinate[pos=0.45] (c) --
+    ++(-45:3.1);
+  \draw[\secondcolor!80!\maincolor]
+    (aux2) --
+    (c) --
+    ++(135:2.5) --
+    ++(45:2.5) --
+    ++(-45:2.5) coordinate[pos=0.3] (d);   
+  \draw[\secondcolor!65!\maincolor]
+    (d) -- +(45:1);
+  \end{scope}
+  \end{tikzpicture}%
+  }
+
+  \newcommand\bottomleftdecoration{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \begin{scope}[\maincolor!70,line width=12pt,rounded corners=12pt]
+      \draw
+        ([shift={(-15pt,15pt)}]current page.south west) -- ++(45:5) -- ++(135:5.1);
+    \end{scope}
+    \begin{scope}[\secondcolor!50!\maincolor, line width=8pt, rounded corners=8pt]
+      \draw
+        ([shift={(-30pt,30pt)}]current page.south west) -- ++(45:3) -- ++(135:3.1);
+    \end{scope}
+    \begin{scope}[\secondcolor!70, line width=6pt, rounded corners=8pt]
+      \draw
+        ([shift={(-45pt,45pt)}]current page.south west) -- ++(45:2) -- ++(135:2);
+    \end{scope}
+  \end{tikzpicture}%
+  }
+
+  \let\oldmaketitle\maketitle
+  \renewcommand{\maketitle}{
+    \newgeometry{left=1.5in,right=1.5in,top=1.1in,bottom=1.2in}
+    \oldmaketitle
+    \thispagestyle{empty}
+    \toprightdecoration
+    \bottomleftdecoration
+  }
+
+  \let\oldtoc\tableofcontents
+  \renewcommand{\tableofcontents}{
+    \oldtoc
+    \restoregeometry
+  }
+\fi
+
+% }}}
+
+
+% ================================================== %
+% ================== CORE STYLING ================== %
+% ================================================== %
+
+
+% {{{ CORE STYLING
+
+\ifbubumax
+  \makeatletter
+  \@ifundefined{chapter}{}{%
+    \addtokomafont{partprefix}{\rmfamily}%
+    \renewcommand*{\partformat}{%
+      \color{purple}%
+      \scalebox{2.5}{\thepart}\enlargethispage{2em}%
+      }
+    \addtokomafont{chapterprefix}{\raggedleft}
+    \RedeclareSectionCommand[beforeskip=0.5em]{chapter}
+    \renewcommand*{\chapterformat}{%
+      \mbox{%
+      \scalebox{1.5}{\chapappifchapterprefix{\nobreakspace}}%
+      \scalebox{2.718}{\color{purple}\thechapter}\enskip}%
+    }
+  }
+  \makeatother
+
+  \renewcommand*{\sectionformat}{%
+    \color{violet}\bubuS\thesection\enskip%
+  }
+  \renewcommand*{\subsectionformat}{%
+    \color{violet}\bubuS\thesubsection\enskip%
+  }
+  \renewcommand*{\subsubsectionformat}{%
+    \color{violet}\bubuS\thesubsubsection\enskip%
+  }
+  \addtokomafont{paragraph}{\color{orange!35!black}\P\ }
+  \KOMAoptions{numbers=noenddot}
+
+
+  % \usetikzlibrary{shadows}
+  % \xpatchcmd{\endmdframed}%
+  %   {\aftergroup\endmdf@trivlist\color@endgroup}%
+  %   {\endmdf@trivlist\color@endgroup\@doendpe}%
+  %   {}%
+  %   {}
+
+
+  \newenvironment{soln}{%
+    \begin{proof}[Solution]%
+    \renewcommand{\qedsymbol}{$\blacksquare$}%
+  }%
+  {\end{proof}}
+
+  \newenvironment{subproof}{%
+    \begin{proof}%
+    \renewcommand{\qedsymbol}{$\square$}%
+  }%
+  {\end{proof}}
+
+  \newtheoremstyle{problemstyle}
+    {8pt}
+    {8pt}
+    {\normalfont}
+    {}
+    {\color{blue!40!black}\normalfont\bfseries}
+    {.}
+    { }
+    {}
+
+  \tcbuselibrary{theorems,skins,hooks}
+  \tcbset{%
+    thmstyle/.style={%
+      enhanced,
+      before skip=12pt,
+      after skip=2pt,
+      coltitle=RawSienna,
+      colback=Salmon!5,
+      colframe=RawSienna,
+      colbacktitle=RawSienna,
+      boxrule=0.8pt,
+      attach boxed title to top left={xshift=1cm,yshift*=1mm-\tcboxedtitleheight},
+      varwidth boxed title*=-3cm,
+      boxed title style={
+          frame code={
+              \path[draw=tcbcolback, line width=0.8pt]
+              ([yshift=-1mm,xshift=-1.1mm]frame.north west)
+              arc[start angle=0,end angle=180,radius=1mm]
+              ([yshift=-1mm,xshift=1.1mm]frame.north east)
+              arc[start angle=180,end angle=0,radius=1mm];
+              \path[left color=tcbcolback!2.5,right color=tcbcolback!2.5,
+                  middle color=tcbcolback!2.5]
+              ([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
+              [rounded corners=1mm]-- ([xshift=1mm,yshift=-1mm]frame.north east)
+              -- (frame.south east) -- (frame.south west)
+              -- ([xshift=-1mm,yshift=-1mm]frame.north west)
+              [sharp corners]-- cycle;
+              \path[draw=tcbcolback, line width=0.8pt]
+              ([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
+              [rounded corners=1mm]-- ([xshift=1mm,yshift=-1mm]frame.north east)
+              -- (frame.south east) -- (frame.south west)
+              -- ([xshift=-1mm,yshift=-1mm]frame.north west)
+              [sharp corners]-- cycle;
+          },
+          interior engine=empty,
+      },
+      fonttitle=\bfseries,
+      description delimiters parenthesis,
+      separator sign none,
+      segmentation style={solid, RawSienna},
+    }
+  }
+
+  \tcbuselibrary{theorems,skins,hooks}
+  \tcbset{%
+    claimstyle/.style={%
+      enhanced,
+      before skip=8pt,
+      after skip=0pt,
+      colback = lightgreen!10,
+      frame hidden,
+      boxrule = 0sp,
+      borderline west = {2pt}{0pt}{lightgreen},
+      sharp corners,
+      detach title,
+      before upper = \tcbtitle\par\medskip,
+      coltitle = lightgreen!85!black,
+      fonttitle = \bfseries\sffamily,
+      description font = \mdseries,
+      description delimiters parenthesis,
+      separator sign none,
+      segmentation style={solid, lightgreen!85!black},
+    }
+  }
+
+  \tcbuselibrary{theorems,skins,hooks}
+  \tcbset{%
+    examplestyle/.style={%
+      enhanced,
+      before skip=12pt,
+      after skip=2pt,
+      colback = lightgreen!10,
+      colframe = darkgreenbg,
+      coltitle = darkgreenfg,
+      boxrule = 0.5pt,
+      sharp corners,
+      detach title,
+      before upper=\tcbtitle\par\medskip,
+      fonttitle = \bfseries,
+      description font = \mdseries,
+      separator sign none,
+      description delimiters parenthesis,
+    }
+  }
+
+  \usetikzlibrary{arrows,calc,shadows.blur}
+  \tcbuselibrary{skins}
+  \tcbset{%
+    notationstyle/.style={%
+      enhanced jigsaw,
+      before skip=12pt,
+      after skip=2pt,
+      colback=gray!20!white,
+      colframe=gray!80!black,
+      size=small,
+      top=2mm,
+      bottom=2mm,
+      boxrule=1pt,
+      title=\bfseries{Notation:},
+      halign title=flush center,
+      coltitle=black,
+      drop shadow=black!50!white,
+      attach boxed title to top left={xshift=1cm,yshift=-\tcboxedtitleheight/2,yshifttext=-\tcboxedtitleheight/2},
+      minipage boxed title=2.25cm,
+      boxed title style={%
+        colback=white,
+        size=fbox,
+        boxrule=1pt,
+        boxsep=2pt,
+        underlay={%
+          \coordinate (dotA) at ($(interior.west) + (-0.5pt,0)$);
+          \coordinate (dotB) at ($(interior.east) + (0.5pt,0)$);
+          \begin{scope}%
+            \clip (interior.north west) rectangle ([xshift=3ex]interior.east);
+            \filldraw [white, blur shadow={shadow opacity=60, shadow yshift=-.75ex}, rounded corners=2pt] (interior.north west) rectangle (interior.south east);
+          \end{scope}
+          \begin{scope}[gray!80!black]%
+            \fill (dotA) circle (2pt);
+            \fill (dotB) circle (2pt);
+          \end{scope}
+        },
+      },
+    }
+  }
+
+  \ifbubusecthm
+    \ifbubucountcont
+      \newcounter{mathcounter}[section]
+      \renewcommand{\themathcounter}{\thesection.\arabic{mathcounter}}
+      \tcbuselibrary{theorems,skins,hooks}
+      \NewDocumentCommand{\thmbox}{m m O{}}{%
+        \newtcbtheorem[number within=section,use counter=mathcounter]{#1}{#2}{%
+          thmstyle,
+          title={#2},
+          #3%
+        }{#1}%
+      }
+
+      \tcbuselibrary{theorems,skins,hooks}
+      \NewDocumentCommand{\claimbox}{m m O{}}{%
+        \newtcbtheorem[number within=section,use counter=mathcounter]{#1}{#2}
+        {%
+          claimstyle,
+          title={#2},
+          #3%
+        }{#1}%
+      }
+
+      \tcbuselibrary{theorems,skins,hooks}
+      \NewDocumentCommand{\examplebox}{m m O{}}{%
+        \newtcbtheorem[number within=section,use counter=mathcounter]{#1}{#2}
+        {%
+          examplestyle,
+          title={#2},
+          #3%
+        }{#1}%
+      }
+
+      \theoremstyle{problemstyle}
+      \newtheorem{exercise}[mathcounter]{Exercise}
+      \newtheorem*{exercise*}{Exercise}
+      \newtheorem{problem}[mathcounter]{Problem}
+      \newtheorem*{problem*}{Problem}
+
+    \else
+      \tcbuselibrary{theorems,skins,hooks}
+      \NewDocumentCommand{\thmbox}{m m O{}}{%
+        \newtcbtheorem[number within=section]{#1}{#2}{%
+          thmstyle,
+          title={#2},
+          #3%
+        }{#1}%
+      }
+
+      \tcbuselibrary{theorems,skins,hooks}
+      \NewDocumentCommand{\claimbox}{m m O{}}{%
+        \newtcbtheorem[number within=section]{#1}{#2}
+        {%
+          claimstyle,
+          title={#2},
+          #3%
+        }{#1}%
+      }
+
+      \tcbuselibrary{theorems,skins,hooks}
+      \NewDocumentCommand{\examplebox}{m m O{}}{%
+        \newtcbtheorem[number within=section]{#1}{#2}
+        {%
+          examplestyle,
+          title={#2},
+          #3%
+        }{#1}%
+      }
+
+      \theoremstyle{problemstyle}
+      \newtheorem{exercise}{Exercise}[section]
+      \newtheorem*{exercise*}{Exercise}
+      \newtheorem{problem}{Problem}[section]
+      \newtheorem*{problem*}{Problem}
+    \fi
+
+  \else
+    \ifbubucountcont
+      \newcounter{mathcounter}[section]
+      \renewcommand{\themathcounter}{\thesection.\arabic{mathcounter}}
+      \tcbuselibrary{theorems,skins,hooks}
+      \NewDocumentCommand{\thmbox}{m m O{}}{%
+        \newtcbtheorem[use counter=mathcounter]{#1}{#2}{%
+          thmstyle,
+          title={#2},
+          #3%
+        }{#1}%
+      }
+
+      \tcbuselibrary{theorems,skins,hooks}
+      \NewDocumentCommand{\claimbox}{m m O{}}{%
+        \newtcbtheorem[use counter=mathcounter]{#1}{#2}
+        {%
+          claimstyle,
+          title={#2},
+          #3%
+        }{#1}%
+      }
+
+      \tcbuselibrary{theorems,skins,hooks}
+      \NewDocumentCommand{\examplebox}{m m O{}}{%
+        \newtcbtheorem[use counter=mathcounter]{#1}{#2}
+        {%
+          examplestyle,
+          title={#2},
+          #3%
+        }{#1}%
+      }
+
+      \theoremstyle{problemstyle}
+      \newtheorem{exercise}[mathcounter]{Exercise}
+      \newtheorem*{exercise*}{Exercise}
+      \newtheorem{problem}[mathcounter]{Problem}
+      \newtheorem*{problem*}{Problem}
+
+    \else
+      \tcbuselibrary{theorems,skins,hooks}
+      \NewDocumentCommand{\thmbox}{m m O{}}{%
+        \newtcbtheorem[]{#1}{#2}{%
+          thmstyle,
+          title={#2},
+          #3%
+        }{#1}%
+      }
+
+      \tcbuselibrary{theorems,skins,hooks}
+      \NewDocumentCommand{\claimbox}{m m O{}}{%
+        \newtcbtheorem[]{#1}{#2}
+        {%
+          claimstyle,
+          title={#2},
+          #3%
+        }{#1}%
+      }
+
+      \tcbuselibrary{theorems,skins,hooks}
+      \NewDocumentCommand{\examplebox}{m m O{}}{%
+        \newtcbtheorem[]{#1}{#2}
+        {%
+          examplestyle,
+          title={#2},
+          #3%
+        }{#1}%
+      }
+
+      \theoremstyle{problemstyle}
+      \newtheorem{exercise}{Exercise}
+      \newtheorem*{exercise*}{Exercise}
+      \newtheorem{problem}{Problem}
+      \newtheorem*{problem*}{Problem}
+    \fi
+  \fi
+
+  \usetikzlibrary{arrows,calc,shadows.blur}
+  \tcbuselibrary{skins}
+  \newtcolorbox{notationbase}[1][]{%
+      notationstyle,
+      #1,
+    }
+
+  \thmbox{definitionbase}{Definition}
+  \thmbox{theorembase}{Theorem}[colback=newbluebg,colframe=deepbluefg,colbacktitle=deepbluefg,coltitle=deepbluefg]
+  \thmbox{lemmabase}{Lemma}[colback=newbluebg,colframe=deepbluefg,colbacktitle=deepbluefg,coltitle=deepbluefg]
+  \thmbox{corollarybase}{Corollary}[colback=deepbluebg,colframe=deepbluefg,colbacktitle=lightbluefg,coltitle=deepbluefg]
+  \thmbox{propositionbase}{Proposition}[colback=deepbluebg,colframe=deepbluefg,colbacktitle=lightbluefg,coltitle=deepbluefg]
+
+  \claimbox{algorithmbase}{Algorithm}
+  \claimbox{claimbase}{Claim}[before upper={\tcbtitle\ {\bfseries\sffamily\color{lightgreen!85!black}---\ }},]
+  \claimbox{questionbase}{Question}[%
+      before upper={\tcbtitle{\bfseries\sffamily\color{darkgreenfg}.}\ },
+      coltitle = darkgreenfg,
+      segmentation style={darkgreenfg}%
+    ]
+  \claimbox{remarkbase}{Remark}[%
+      colback=RedViolet!5!gray!5,
+      borderline west = {2.5pt}{0pt}{black},
+      before upper={\tcbtitle{\bfseries\sffamily\color{black}.}\ },
+      coltitle = black,
+      segmentation style={solid, black}%
+    ]
+
+  \examplebox{examplebase}{Example}
+
+  % Mother wrapper generator
+  \NewDocumentCommand{\MakeWrapper}{mm}{%
+    \NewDocumentEnvironment{#1}{o}%
+    {%
+      \IfValueTF{##1}%
+        {\begin{#2}{##1}{}}%
+        {\begin{#2}{}{}}%
+    }
+    {%
+      \end{#2}%
+    }%
+  }
+
+  \MakeWrapper{notation}{notationbase}
+
+  \MakeWrapper{definition}{definitionbase}
+  \MakeWrapper{theorem}{theorembase}
+  \MakeWrapper{lemma}{lemmabase}
+  \MakeWrapper{corollary}{corollarybase}
+  \MakeWrapper{proposition}{propositionbase}
+
+  \MakeWrapper{example}{examplebase}
+  \MakeWrapper{algorithm}{algorithmbase}
+  \MakeWrapper{claim}{claimbase}
+  \MakeWrapper{ques}{questionbase}
+  \MakeWrapper{remark}{remarkbase}
+
+\else
+  \theoremstyle{plain}
+  \newtheorem{theorem}{Theorem}
+  \newtheorem*{theorem*}{Theorem}
+  \newtheorem{lemma}[theorem]{Lemma}
+  \newtheorem*{lemma*}{Lemma}
+  \newtheorem{corollary}[theorem]{Corollary}
+  \newtheorem*{corollary*}{Corollary}
+  \newtheorem{proposition}[theorem]{Proposition}
+  \newtheorem*{proposition*}{Proposition}
+  \newtheorem{claim}[theorem]{Claim}
+  \newtheorem*{claim*}{Claim}
+  \newtheorem{problem}[theorem]{Problem}
+  \newtheorem*{problem*}{Problem}
+  \newtheorem{question}[theorem]{Question}
+  \newtheorem*{question*}{Question}
+  \newtheorem{exercise}[theorem]{Exercise}
+  \newtheorem*{exercise*}{Exercise}
+
+  \theoremstyle{definition}
+  \newtheorem{definition}[theorem]{Definition}
+  \newtheorem*{definition*}{Definition}
+  \newtheorem{example}[theorem]{Example}
+  \newtheorem*{example*}{Example}
+  \newtheorem{algorithm}[theorem]{Algorithm}
+  \newtheorem*{algorithm*}{Algorithm}
+
+  \theoremstyle{remark}
+  \newtheorem{remark}[theorem]{Remark}
+  \newtheorem*{remark*}{Remark}
+\fi
+
+% }}}
+
+
+% ================================================== %
+% =============== ASY SETUP (BY EVAN) ============== %
+% ================================================== %
+
+
+% {{{ ASY SETUP (BY EVAN)
+
+\ifbubuasy
+  \RequirePackage{asymptote}
+  \begin{asydef}
+      defaultpen(fontsize(10pt));
+      size(8cm); // set a reasonable default
+      usepackage("amsmath");
+      usepackage("amssymb");
+      settings.tex="pdflatex";
+      settings.outformat="pdf";
+      // Replacement for olympiad+cse5 which is not standard
+      import geometry;
+      // recalibrate fill and filldraw for conics
+      void filldraw(picture pic = currentpicture, conic g, pen fillpen=defaultpen, pen drawpen=defaultpen)
+        { filldraw(pic, (path) g, fillpen, drawpen); }
+      void fill(picture pic = currentpicture, conic g, pen p=defaultpen)
+        { filldraw(pic, (path) g, p); }
+      // some geometry
+      pair foot(pair P, pair A, pair B) { return foot(triangle(A,B,P).VC); }
+      pair centroid(pair A, pair B, pair C) { return (A+B+C)/3; }
+      // cse5 abbreviations
+      path CP(pair P, pair A) { return circle(P, abs(A-P)); }
+      path CR(pair P, real r) { return circle(P, r); }
+      pair IP(path p, path q) { return intersectionpoints(p,q)[0]; }
+      pair OP(path p, path q) { return intersectionpoints(p,q)[1]; }
+      path Line(pair A, pair B, real a=0.6, real b=a) { return (a*(A-B)+A)--(b*(B-A)+B); }
+      // cse5 more useful functions
+      picture CC() {
+        picture p=rotate(0)*currentpicture;
+        currentpicture.erase();
+        return p;
+      }
+      pair MP(Label s, pair A, pair B = plain.S, pen p = defaultpen) {
+        Label L = s;
+        L.s = "$"+s.s+"$";
+        label(L, A, B, p);
+        return A;
+      }
+      pair Drawing(Label s = "", pair A, pair B = plain.S, pen p = defaultpen) {
+        dot(MP(s, A, B, p), p);
+        return A;
+      }
+      path Drawing(path g, pen p = defaultpen, arrowbar ar = None) {
+        draw(g, p, ar);
+        return g;
+      }
+    \end{asydef}
+\fi
+
+% }}}
+
+
+% ================================================== %
+% ================= USEFUL MACROS ================== %
+% ================================================== %
+
+
+% {{{ USEFUL MACROS
+
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\arccsc}{arccsc}
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\arccot}{arccot}
+\renewcommand{\csc}{\cosec}
+
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+\newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}
+
+\newcommand{\ol}{\overline}
+\newcommand{\ul}{\underline}
+\newcommand{\wt}{\widetilde}
+\newcommand{\wh}{\widehat}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\tri}{\triangle}
+\newcommand{\para}{\parallel}
+\providecommand{\arc}[1]{\wideparen{#1}}
+
+\newcommand{\hrulebar}{%
+  \centering
+  \par\hspace*{\fill}\rule{0.8\textwidth}{.7pt}\hspace*{\fill}%
+  % \par\noindent\rule{\textwidth}{0.7pt}%
+  \par\nointerlineskip \vspace{\baselineskip}%
+}
+
+\DeclareMathOperator{\cis}{cis}
+\DeclareMathOperator*{\lcm}{lcm}
+\DeclareMathOperator*{\argmin}{arg min}
+\DeclareMathOperator*{\argmax}{arg max}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\pow}{Pow}
+
+\newcommand{\CC}{\mathbb C}
+\newcommand{\FF}{\mathbb F}
+\newcommand{\NN}{\mathbb N}
+\newcommand{\QQ}{\mathbb Q}
+\newcommand{\RR}{\mathbb R}
+\newcommand{\ZZ}{\mathbb Z}
+
+\newcommand{\abs}[1]{\left\lvert #1 \right\rvert}
+\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
+\newcommand{\anbr}[1]{\left\langle #1 \right\rangle}
+\newcommand{\sbr}[1]{\left[ #1 \right]}
+\newcommand{\ang}{\angle}
+\newcommand{\dang}{\measuredangle}
+\newcommand{\ray}[1]{\overrightarrow{#1}}
+
+\DeclareMathOperator{\id}{id}
+\newcommand{\inv}{^{-1}}
+\newcommand{\dg}{^\circ}
+\newcommand{\trans}{%
+  ^{\mathsf{T}}%
+}
+\newcommand{\ii}{\item}
+\newcommand{\opname}{\operatorname}
+\newcommand{\OO}{\mathcal O}
+\newcommand{\oo}{\infty}
+\newcommand{\dgnin}{90^{\circ}}
+\newcommand{\dgone}{180^{\circ}}
+\newcommand{\mailto}[1]{%
+  \href{mailto:#1}{\texttt{#1}}%
+}
+
+\NewDocumentCommand{\dd}{O{} m m}{%
+  \IfBlankTF{#1}{%
+    \frac{\mathrm{d}#2}{\mathrm{d}#3}%
+  }{%
+    \frac{\mathrm{d}^{#1}#2}{\mathrm{d}#3^{#1}}%
+  }%
+}
+
+\NewDocumentCommand{\pd}{O{} m m}{%
+  \IfBlankTF{#1}{%
+    \frac{\partial #2}{\partial #3}%
+  }{%
+    \frac{\partial^{#1}#2}{\partial #3^{#1}}%
+  }%
+}
+
+\newcommand{\aopssoln}[3]{\href{#3}{Solution} by \textbf{#1} (\##2 on the thread).}
+\newcommand{\msesoln}[2]{\href{#2}{Solution} by \textbf{#1}.}
+
+% }}}

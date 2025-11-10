@@ -5,6 +5,7 @@ set wrap "wraps long lines
 set mouse=a
 set showmatch "matching brackets
 set ttyfast "faster scrolling speed
+set relativenumber
 set noshowmode
 set tabstop=4 
 set shiftwidth=4
@@ -21,10 +22,17 @@ endif
 
 "Color Scheme
 set termguicolors
-colorscheme ayu
+colorscheme tokyonight
+
+hi Search    guifg=#1a1b26 guibg=#9eb2f2 gui=bold   " blue for all matches
+hi IncSearch guifg=#1a1b26 guibg=#e0af68 gui=bold   " orange for current match
+
+set hlsearch          " highlight matches
+set incsearch         " live search (for IncSearch)
+set ignorecase smartcase
 
 "Airline Configuration
-let g:airline_theme='ayu'
+let g:airline_theme='tokyonight'
 let g:airline#extensions#whitespace#enabled = 0
 
 "coc-config

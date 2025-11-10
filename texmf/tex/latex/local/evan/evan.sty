@@ -394,6 +394,7 @@
   \ifevanthm
     \usepackage{amsthm}
     \usepackage{thmtools}
+    \hypersetup{hypertexnames=false}
   \fi
   \ifevanmdthm
     \ifevanthm
@@ -401,6 +402,7 @@
     \else
       \usepackage{amsthm}
       \usepackage{thmtools}
+      \hypersetup{hypertexnames=false}
     \fi
     \usepackage[framemethod=TikZ]{mdframed}
     \usetikzlibrary{shadows}
@@ -787,6 +789,7 @@
           }
         )}
       \setmainfont{Latin Modern Roman}[
+        SlantedFont={Latin Modern Roman Slanted},
         RawFeature={fallback=evans_fallbacks}
       ]
       \setsansfont{Latin Modern Sans}[

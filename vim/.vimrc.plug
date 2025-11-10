@@ -13,7 +13,6 @@ Plug 'honza/vim-snippets',
 Plug 'jiangmiao/auto-pairs',
 Plug 'ayu-theme/ayu-vim',
 Plug 'ghifarit53/tokyonight-vim',
-Plug 'dracula/vim', { 'name': 'dracula' }
 " Plug 'SirVer/ultisnips',
 Plug 'fladson/vim-kitty', 
 Plug 'hura/vim-asymptote',           { 'for' : 'asy' }
@@ -24,5 +23,4 @@ Plug 'Fymyte/rasi.vim',
 Plug 'chrisbra/csv.vim', 			{ 'for' : 'csv' }
 Plug 'joshdick/onedark.vim',
 Plug 'Mofiqul/adwaita.nvim',
-Plug 'gertjanreynaert/cobalt2-vim-theme',
 call plug#end()

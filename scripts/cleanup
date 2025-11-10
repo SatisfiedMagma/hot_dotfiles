@@ -1,6 +1,6 @@
 #!/bin/bash
 
-extensions=(".aux" ".fdb_latexmk" ".fls" ".asy" ".log" ".pre" ".synctex.gz" ".toc" ".glo" ".out" ".gls" ".ist" ".glg" ".dvi" ".out.ps" ".synctex(busy)")
+extensions=(".aux" ".fdb_latexmk" ".fls" ".asy" ".log" ".pre" ".synctex.gz" ".toc" ".glo" ".out" ".gls" ".ist" ".glg" ".dvi" ".out.ps" ".synctex(busy)" ".bcf" ".hint" ".run.xml" ".bbl-SAVE-ERROR")
 files_array=($(ls))
 
 for file in "${files_array[@]}"; do

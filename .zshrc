@@ -24,11 +24,11 @@ source $ZSH/oh-my-zsh.sh
 #cool aliases
 alias zshconfig="vim ~/.zshrc"
 alias i3config="vim ~/.config/i3/config"
+alias cbook="cd $HOME/Documents/Calc_Book"
 alias matholy="~/Documents/Maths-Olympiads/"
 alias olycode="code ~/Documents/Maths-Olympiads/"
 alias basecode="code ~/Desktop/Olybase"
 alias bookcode="code $HOME/Documents/Calc_Book"
-alias cbook="cd $HOME/Documents/Calc_Book"
 alias book="command ls ~/Documents/Maths-Olympiads/Handouts_Books/*.pdf | fzf | xargs -I{} bash -c \"zathura {} &\"" #evan-so-good
 alias sprint="python /home/pragyan/Desktop/Sprint-DB-Manager/"
 alias ls="exa --icons"
@@ -53,3 +53,5 @@ export PATH=$PATH:/home/pragyan/.spicetify
 
 # Created by `pipx` on 2024-07-10 18:42:08
 export PATH="$PATH:/home/pragyan/.local/bin"
+
+eval "$(zoxide init --cmd cd zsh)"
