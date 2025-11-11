@@ -23,4 +23,5 @@ Plug 'Fymyte/rasi.vim',
 Plug 'chrisbra/csv.vim', 			{ 'for' : 'csv' }
 Plug 'joshdick/onedark.vim',
 Plug 'Mofiqul/adwaita.nvim',
+Plug 'romainl/vim-cool',
 call plug#end()

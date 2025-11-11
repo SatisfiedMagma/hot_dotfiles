@@ -1,8 +1,8 @@
 #!/usr/bin/env zsh
 
 count=0
-connected="說"
-disconnected="ﲁ"
+connected="hi"
+disconnected="bye"
 
 ID="$(ip link | awk '/state UP/ {print $2}')"
 

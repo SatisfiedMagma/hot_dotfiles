@@ -1,5 +1,3 @@
-"Setting Basic Things
-
 set number "line numbers
 set wrap "wraps long lines
 set mouse=a
@@ -10,9 +8,11 @@ set noshowmode
 set tabstop=4 
 set shiftwidth=4
 set ruler
-set autoindent 
+set foldcolumn=2
+set autoindent
 set smartindent
 set splitright "terminal position
+set clipboard=unnamedplus "yank copies into system_clipboard
 syntax on
 
 "Plugin Setup
@@ -22,10 +22,13 @@ endif
 
 "Color Scheme
 set termguicolors
-colorscheme tokyonight
+
+let g:tokyonight_enable_italic = 1
+colorscheme tokyonight " change bg0 in plugin file to 151520
 
 hi Search    guifg=#1a1b26 guibg=#9eb2f2 gui=bold   " blue for all matches
 hi IncSearch guifg=#1a1b26 guibg=#e0af68 gui=bold   " orange for current match
+hi FoldColumn guibg=NONE " adding left margin
 
 set hlsearch          " highlight matches
 set incsearch         " live search (for IncSearch)
