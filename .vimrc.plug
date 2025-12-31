@@ -6,14 +6,16 @@ Plug 'vim-airline/vim-airline',
 Plug 'vim-airline/vim-airline-themes',
 Plug 'vim-python/python-syntax',     { 'for' : 'python' }
 Plug 'ap/vim-css-color',
+Plug 'Yggdroot/indentLine',
 Plug 'scrooloose/nerdtree',
 Plug 'sheerun/vim-polyglot',
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'honza/vim-snippets',
 Plug 'jiangmiao/auto-pairs',
+Plug 'ap/vim-css-color',
 Plug 'ayu-theme/ayu-vim',
 Plug 'ghifarit53/tokyonight-vim',
-" Plug 'SirVer/ultisnips',
+Plug 'SirVer/ultisnips',
 Plug 'fladson/vim-kitty', 
 Plug 'hura/vim-asymptote',           { 'for' : 'asy' }
 Plug 'mboughaba/i3config.vim',       { 'for' : 'i3config' }
@@ -22,6 +24,5 @@ Plug 'ypcrts/securemodelines',
 Plug 'Fymyte/rasi.vim',
 Plug 'chrisbra/csv.vim', 			{ 'for' : 'csv' }
 Plug 'joshdick/onedark.vim',
-Plug 'Mofiqul/adwaita.nvim',
 Plug 'romainl/vim-cool',
 call plug#end()

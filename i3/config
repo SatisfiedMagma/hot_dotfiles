@@ -111,7 +111,7 @@ bindsym $mod+6 workspace number $ws6
 bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
-bindsym $mod+0 workspace number $ws10
+# bindsym $mod+0 workspace number $ws10
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
@@ -180,12 +180,10 @@ bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
 # bindsym XF86AudioNext exec playerctl next
 # bindsym XF86AudioPrev exec playerctl previous
 
-#Conky Configuration
-# exec_always picom
-#exec_always conky -d
+exec_always picom
 
 #Wallpaper config
-exec_always feh --bg-scale /home/pragyan/hot_dotfiles/wallpapers/pexels-agk42-2599247.jpg
+exec_always feh --bg-scale /home/pragyan/hot_dotfiles/wallpapers/dark_night.jpg
 
 #Polybar config
 exec_always bash ~/.config/polybar/launch.sh --hack
@@ -193,7 +191,7 @@ exec_always bash ~/.config/polybar/launch.sh --hack
 for_window [class="discord"] move to workspace $ws3
 # for_window [class="kitty"] move to workspace $ws2
 for_window [class="Brave"] move to workspace $ws1
-for_window [class="Code"] move to workspace $ws4
+for_window [class="code-oss"] move to workspace $ws4
 for_window [class="Spotify"] move to workspace $ws5
 for_window [class="org-geogebra-desktop-GeoGebra3D"] move to workspace $ws6
 for_window [class="Google-chrome"] move to workspace $ws1
@@ -206,6 +204,9 @@ gaps outer 3
 default_border pixel 1
 default_floating_border pixel 0
 
+#Kill all current notifications
+bindsym Control+space exec dunstctl close-all
+
 # class                 border  backgr. text    indicator child_border
 client.focused          #ffffff #008ECC #ffffff #ffffff   #ffffff
 client.focused_inactive #008ECC #5f676a #ffffff #484e50   #5f676a
@@ -217,7 +218,10 @@ client.background       #ffffff
 
 #Screenshots(flameshot)
 exec_always flameshot
-bindsym Print exec flameshot full --clipboard
-bindsym Ctrl+Print exec flameshot gui
+bindsym $mod+Shift+f exec flameshot full --clipboard
+bindsym $mod+Shift+g exec flameshot gui
+
+#i3lock-fancy
+bindsym $mod+0 exec i3lock-fancy -d -f "JetBrainsMono-NF-Medium"
 
 # vim: ft=i3config

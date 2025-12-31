@@ -1,9 +1,9 @@
 set number "line numbers
+set relativenumber
 set wrap "wraps long lines
 set mouse=a
 set showmatch "matching brackets
 set ttyfast "faster scrolling speed
-set relativenumber
 set noshowmode
 set tabstop=4 
 set shiftwidth=4
@@ -16,8 +16,8 @@ set clipboard=unnamedplus "yank copies into system_clipboard
 syntax on
 
 "Plugin Setup
-if filereadable(expand("/home/pragyan/.config/vim/.vimrc.plug"))
-	source ~/.config/vim/.vimrc.plug
+if filereadable(expand("$HOME/.vimrc.plug"))
+	source $HOME/.vimrc.plug
 endif 
 
 "Color Scheme
