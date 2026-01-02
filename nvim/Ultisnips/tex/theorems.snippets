@@ -1,0 +1,61 @@
+#Claim environment
+snippet claim* "\\begin{claim*} ... \\end{claim*}" b
+\begin{claim*}${1}
+	${2:Statement of the claim.}
+\end{claim*}
+$0
+endsnippet
+
+#Remark environment
+snippet rem* "\\begin{remark*} ... \\end{remark*}" b
+\begin{remark*}${1}
+	${2:Your remark.}
+\end{remark*}
+$0
+endsnippet
+
+#Exercise environment
+snippet exercise "\\begin{exercise} ... \\end{exercise}" b
+\begin{exercise}${1}
+	${2:Make muscles!}
+\end{exercise}
+$0
+endsnippet
+
+#Definition environment
+snippet defi "\\begin{defi} ... \\end{defi}" b
+\begin{definition}{${1:Term}}{}
+	${2:Define your term.}
+\end{definition}
+$0
+endsnippet
+
+#Lemma environment
+snippet lemma "\\begin{lemma} ... \\end{lemma}" b
+\begin{lemma}${1}
+	${2:What's your lemma?}
+\end{lemma}
+$0
+endsnippet
+
+#Theorem environment
+snippet cthm "\\begin{thm} ... \\end{thm}" b
+\begin{theorem}{(${1:Name})}{}
+	${2:What's the theorem?}
+\end{theorem}
+$0
+endsnippet
+
+#Solution environment
+snippet sol "\\begin{sol} ... \\end{sol}" b
+\begin{sol}
+	$0
+\end{sol}
+endsnippet
+
+#Problem environment
+snippet problem "\\begin{problem} ... \\end{problem}" b
+\begin{problem}${1}
+	${0:What's the problem here?}
+\end{problem}
+endsnippet

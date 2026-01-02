@@ -1,0 +1,19 @@
+snippet simple_template "Simple LaTeX Template" b
+\documentclass[11pt]{scrartcl}
+\usepackage[left=1.1in,right=1.1in]{geometry}
+\usepackage{sprint}
+% Get the Sprint package from here:
+% https://github.com/SatisfiedMagma/hot_dotfiles/blob/main/texmf/tex/latex/local/The-Sprint-Package/sprint.sty
+
+\rhead{${1:Title}}
+% \lhead{Pragyan Pranay \today}
+
+\begin{document}
+\title{${1:Title}}
+\maketitle
+\tableofcontents
+
+$0
+\end{document}
+endsnippet
+

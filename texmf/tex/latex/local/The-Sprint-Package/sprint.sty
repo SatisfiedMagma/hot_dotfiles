@@ -225,14 +225,14 @@ linktoc=all
     boxed title style={boxrule=1pt}}}
 
 \ifdeep
-\newtcbtheorem[auto counter, number within=subsubsection]{thm}{Theorem}{thmbox}{thm}
+\newtcbtheorem[auto counter, number within=subsubsection]{thm}{Theorem}{thmbox}{theorem}
 \else
-\newtcbtheorem[auto counter, number within=section]{thm}{Theorem}{thmbox}{thm}
+\newtcbtheorem[auto counter, number within=section]{thm}{Theorem}{thmbox}{theorem}
 \fi
 
 
 \ifdeep
-\newtcbtheorem[auto counter,number within=subsubsection]{defi}{Definition}%
+\newtcbtheorem[auto counter,number within=subsubsection]{definition}{Definition}%
 {enhanced,frame empty,interior empty,colframe=white, top=2.5mm,
     coltitle=white,fonttitle=\bfseries \sffamily,colbacktitle=orange!100!white, after skip = 12pt, before skip = 10pt,
     borderline={0.5mm}{0mm}{orange!15!},
@@ -240,7 +240,7 @@ linktoc=all
     attach boxed title to top left={yshift=-1.8mm},
     boxed title style={boxrule=1pt}}{thm}
 \else
-\newtcbtheorem[auto counter,number within=section]{defi}{Definition}%
+\newtcbtheorem[auto counter,number within=section]{definition}{Definition}%
 {enhanced,frame empty,interior empty,colframe=white, top=2.5mm,
     coltitle=white,fonttitle=\bfseries \sffamily,colbacktitle=orange!100!white, after skip = 12pt, before skip = 10pt,
     borderline={0.5mm}{0mm}{orange!15!},
