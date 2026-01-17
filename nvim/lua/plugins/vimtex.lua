@@ -40,6 +40,7 @@ return {
             pattern = "*.tex",
             callback = function()
                 vim.opt_local.textwidth = 62
+                vim.opt_local.conceallevel = 0
             end,
         })
     end,

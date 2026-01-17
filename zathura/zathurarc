@@ -24,6 +24,7 @@ set notification-error-fg       "#f7768e"
 set notification-warning-bg     "#1a1b26"
 set notification-warning-fg     "#f7768e"
 
+# getting transparent highlights
 set highlight-color				rgba(255,149,0,0.7)
 set highlight-active-color		rgba(255,149,0,0.5)
 

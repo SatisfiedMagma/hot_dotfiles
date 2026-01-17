@@ -1,4 +1,4 @@
-snippet simple_template "Simple LaTeX Template" b
+snippet template "Simple LaTeX Template" b
 \documentclass[11pt]{scrartcl}
 \usepackage[left=1.1in,right=1.1in]{geometry}
 \usepackage{sprint}
@@ -9,11 +9,11 @@ snippet simple_template "Simple LaTeX Template" b
 % \lhead{Pragyan Pranay \today}
 
 \begin{document}
-\title{${1:Title}}
+\title{$1}
 \maketitle
 \tableofcontents
 
-$0
+${0}
 \end{document}
 endsnippet
 
