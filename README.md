@@ -1,72 +1,38 @@
-# Hot_Dotfiles!
+# Hot Dotfiles🔥
+My personal Arch Linux Configuration which I've built over years. I admit I've blatantly copied a few people's configurations from GitHub and I've tried to give them credit in the config files in comments. 
 
-We have a lot of configurations which I'm slowly going to document here. 
+I still don't think this is complete but as of now I've no real interest of writing the missing bash scripts which aren't here🫠
 
-## Kitty
+My ricing philosophy is simple, make everything look pretty but always in a useful state. I don't like those super smooth fade transitions which picom provides. It looks aesthetic but terrible for any serious work.
 
-This is simple. Download from official repositories with 
-```bash
-sudo pacman -S kitty
-```
-Then create a symlink and put all the configs in place. The fonts folder is quite important since you want the nerd fonts back to use. 
+### Highlights of Setup 🖥️
+* **Distribution**: [Arch Linux](https://archlinux.org/) as I said.
 
-## Zathura
+* **GTK Theme/Color Scheme:** Recently switched to _Tokyo Night_. Was earlier using _Ayu_ or _Mayukai_.
+* **🐱 Terminal**: [Kitty](https://github.com/kovidgoyal/kitty) with _Tokyo Night_.
 
-Download using 
-```zsh
-sudo pacman -S zathura zathura-pdf-poppler
-```
-After this, creating a symlink is enough in the directory ``/home/pragyan/.config/zathura``.
+* **🪟 Window Manager:** [i3](https://github.com/i3/i3) with [picom](https://github.com/yshui/picom) as compositor.
 
-## Wallpapers
+* **Polybar:** [Hack Theme](https://github.com/adi1090x/polybar-themes) with slight modifications from the [famous repository](https://github.com/adi1090x/polybar-themes) by `adi1090x`.
 
-Just a bunch of nice wallpapers I found online are stored here. The main wallpaper for ``i3`` is also stored here.
+* **Font:** ``JetBrainsMono NF``, a Nerd Font.
 
-## texmf
+* **Shell:** Zsh shell with [Powerlevel10k](https://github.com/romkatv/powerlevel10k)
 
-Basically, it contains my own ``sprint`` package which I wrote back in the day and also has ``evan.sty``. It's just the folder where telive looks for custom packages. Create a symlink for it using the following command.
-```zsh
-ln -s /home/hot_dotfiles/texmf /home/pragyan
-```
+* **✏️ Text Editor**: [Neovim](https://github.com/neovim/neovim) with [lazy.nvim](https://github.com/folke/lazy.nvim) along with [VS Code](https://code.visualstudio.com/) and [Sublime Text](https://www.sublimetext.com/) occasionally.
 
-## .asy and .latexmkrc
+* **$\TeX$ Distribution**: [TexLive](https://tug.org/texlive/) for Linux of course.
 
-This just has the custom modules ``olympiad.asy`` and ``cse5.asy`` for making custom asymptote diagrams. You can download it quite easily using 
-```zsh
-sudo pacman -S asymptote
-```
-Then finally create a symlink using 
-```zsh
-ln -s /home/pragyan/hot_dotfiles/.asy /home/pragyan/.asy
-```
-The ``.latexmkrc`` is the configuration file which automates the process of compiling latex documents where you can easily compile asymptote diagrams without much hassle. Just create a symlink using
-```zsh
-ln -s /home/pragyan/hot_dotfiles/.latexmkrc /home/pragyan/.latexmkrc
-```
+* **📄 PDF Viewer:** [Zathura](https://pwmt.org/projects/zathura/) with [PDF-Poppler Plugin](https://pwmt.org/projects/zathura-pdf-poppler/).
 
-## Scripts
+* **🌐 Browser**: [Zen Browser](https://zen-browser.app/) but takes too much RAM. Would switch back to [Firefox](https://www.firefox.com/) once it stops lagging for me.
 
-This just has some custom scripts which I would like to use on a daily basis. Create symlinks in the following folder and you're rolling!
-```zsh
-/home/$HOME/.local/bin
-```
-## Zsh Shell
+### Installation 🚀
+To download the dotfiles, I'll eventually write a bash script which extracts everything from this github repository and makes the correct symlink. This is a TODO.
 
-This is a very important configuration file for my zsh shell. Just make a symlink using 
-```zsh
-ln -s /home/pragyan/hot_dotfiles/.zshrc /home/pragyan/.zshrc
-```
-There are quite a lot of configurations in the file. The harder part is downloading ``zsh`` and ``powerlevel10k`` which mainly is okay with git cloning and putting things together.
+## 📝 Notes on Ricing
+![image](Screenshots/setup.png "Showcasing my Rice")
 
-Download ``zsh`` using ``pacman`` and the ``powerlevel10k`` using git.
+I use ``i3-wm`` with ``i3-gaps``. The programs active in the screenshot are ``cbonsai``, ``nvim`` and ``cava``. The ``polybar`` theme and configuration is available in [polybar directory](./polybar/). The wallpaper is available in [wallpapers directory](./wallpapers/).
 
-Add the required packages with git cloning in the ``.zshrc`` file. Rest, you're good to go!
-
-## Pacman
-
-There aren't many configurations which I have but, but you should open the pacman configuration file with 
-
-```
-sudo vim /etc/pacman.conf
-```
-and give the password. Go down a bit and uncomment ``Color``, ``VerbosePkgLists`` and lower the number of ``ParallelDownloads`` to something like 2 or 3, whatever feels good. Also add the line ``ILoveCandy`` for fancier pacman. That's all you need.
+No fancy fade animations — ``picom`` is only used to add terminal transparency.

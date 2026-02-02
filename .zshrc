@@ -14,7 +14,6 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 
-
 ZSH_THEME="powerlevel10k/powerlevel10k"
 # ZSH_THEME="spaceship"
 
